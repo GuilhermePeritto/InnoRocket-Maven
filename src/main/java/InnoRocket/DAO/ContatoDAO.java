@@ -1,11 +1,13 @@
 package InnoRocket.DAO;
 
+import InnoRocket.Model.Cidade;
 import InnoRocket.Model.Contato;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContatoDAO {
@@ -33,15 +35,25 @@ public class ContatoDAO {
         return contatos;
     }
 
-    public static Contato buscarPorId(Integer contatoId) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
-        EntityManager em = emf.createEntityManager();
-        Contato contato = em.find(Contato.class, contatoId);
+    public static Object[] listaPorNomes() {
+        List<Contato> contatos = listar();
+        List<String> contatoNomes = new ArrayList<>();
 
-        em.close();
-        emf.close();
+        for (Contato contato : contatos) {
+            contatoNomes.add(contato.getNome());
+        }
+        return contatoNomes.toArray();
+    }
 
-        return contato;
+    public static List<Contato> buscaPorNome(String nome) {
+        List<Contato> contatos = listar();
+        List<Contato> contatosFiltrados = new ArrayList<>();
+        for (Contato contato : contatos) {
+            if (contato.getNome().contains(nome)) {
+                contatosFiltrados.add(contato);
+            }
+        }
+        return contatosFiltrados;
     }
 
     public static void alterar(Contato contato) {

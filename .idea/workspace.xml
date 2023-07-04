@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação das dao">
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/EspecializacaoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/FotoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/MenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/EspecioalizacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/EspecioalizacaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" afterDir="false" />
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="commit de criação de DAO">
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/CentroDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/CentroDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/CidadeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/CidadeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/ContatoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/ContatoDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +38,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "node.js.selected.package.tslint": "(autodetect)"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Guilherme.peritto\IdeaProjects\InnoRocket - Maven\src\main\resources" />
@@ -69,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688489804660</updated>
       <workItem from="1688489807015" duration="7069000" />
-      <workItem from="1688507511393" duration="5278000" />
+      <workItem from="1688507511393" duration="3958000" />
     </task>
     <task id="LOCAL-00001" summary="Criação da base">
       <option name="closed" value="true" />
@@ -79,39 +71,7 @@
       <option name="project" value="LOCAL" />
       <updated>1688497844414</updated>
     </task>
-    <task id="LOCAL-00002" summary="Criação das model">
-      <option name="closed" value="true" />
-      <created>1688509107550</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1688509107550</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Criação das model">
-      <option name="closed" value="true" />
-      <created>1688509387050</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1688509387050</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Criação das dao">
-      <option name="closed" value="true" />
-      <created>1688511036635</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1688511036635</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Criação das dao">
-      <option name="closed" value="true" />
-      <created>1688511819859</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1688511819859</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,12 +87,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Criação da base" />
     <MESSAGE value="commit de criação de Model" />
-    <MESSAGE value="Criação das dao" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação das dao" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit de criação de Model" />
   </component>
 </project>

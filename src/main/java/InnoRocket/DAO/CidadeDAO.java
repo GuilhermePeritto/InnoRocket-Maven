@@ -1,11 +1,13 @@
 package InnoRocket.DAO;
 
+import InnoRocket.Model.Centro;
 import InnoRocket.Model.Cidade;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CidadeDAO {
@@ -33,15 +35,25 @@ public class CidadeDAO {
         return cidades;
     }
 
-    public static Cidade buscarPorId(Integer cidadeId) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
-        EntityManager em = emf.createEntityManager();
-        Cidade cidade = em.find(Cidade.class, cidadeId);
+    public static Object[] listaPorNomes() {
+        List<Cidade> cidades = listar();
+        List<String> cidadeNomes = new ArrayList<>();
 
-        em.close();
-        emf.close();
+        for (Cidade cidade : cidades) {
+            cidadeNomes.add(cidade.getCidade());
+        }
+        return cidadeNomes.toArray();
+    }
 
-        return cidade;
+    public static List<Cidade> buscaPorNome(String nome) {
+        List<Cidade> cidades = listar();
+        List<Cidade> cidadeFiltradas = new ArrayList<>();
+        for (Cidade centro : cidades) {
+            if (centro.getCidade().contains(nome)) {
+                cidadeFiltradas.add(centro);
+            }
+        }
+        return cidadeFiltradas;
     }
 
     public static void alterar(Cidade cidade) {

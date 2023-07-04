@@ -1,11 +1,13 @@
 package InnoRocket.DAO;
 
 import InnoRocket.Model.Centro;
+import InnoRocket.Model.Foto;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CentroDAO {
@@ -33,15 +35,25 @@ public class CentroDAO {
         return centros;
     }
 
-    public static Centro buscarPorId(Integer centroId) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
-        EntityManager em = emf.createEntityManager();
-        Centro centro = em.find(Centro.class, centroId);
+    public static Object[] listaPorNomes() {
+        List<Centro> centros = listar();
+        List<String> centroNomes = new ArrayList<>();
 
-        em.close();
-        emf.close();
+        for (Centro centro : centros) {
+            centroNomes.add(centro.getNome());
+        }
+        return centroNomes.toArray();
+    }
 
-        return centro;
+    public static List<Centro> buscaPorNome(String nome) {
+        List<Centro> centros = listar();
+        List<Centro> centrosFiltradas = new ArrayList<>();
+        for (Centro centro : centros) {
+            if (centro.getNome().contains(nome)) {
+                centrosFiltradas.add(centro);
+            }
+        }
+        return centrosFiltradas;
     }
 
     public static void alterar(Centro centro) {
