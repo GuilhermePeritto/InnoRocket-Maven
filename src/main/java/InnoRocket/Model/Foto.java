@@ -1,4 +1,4 @@
-package Model;
+package InnoRocket.Model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
