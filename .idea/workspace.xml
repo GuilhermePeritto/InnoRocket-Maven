@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/UfDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Uf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/View/UfView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação da base" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,8 +69,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1688489804660</updated>
-      <workItem from="1688489807015" duration="5838000" />
+      <workItem from="1688489807015" duration="7069000" />
     </task>
+    <task id="LOCAL-00001" summary="Criação da base">
+      <option name="closed" value="true" />
+      <created>1688497844414</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688497844414</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,5 +87,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Criação da base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação da base" />
   </component>
 </project>
