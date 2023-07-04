@@ -1,11 +1,8 @@
 package InnoRocket.View;
 
-import InnoRocket.DAO.UfDAO;
-
+import InnoRocket.Controller.UfController;
 import javax.swing.*;
-
 import static InnoRocket.Controller.UfController.cadastroUf;
-import static InnoRocket.View.UfView.processoUf;
 
 public class MenuView {
     public static void chamaMenuPrincipal(){
@@ -88,40 +85,17 @@ public class MenuView {
     }
 
     public static void listBoxProcessos() {
-        try {
-            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
-            String initialSelection = (String) selectionValues[0];
-            Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de processo",
-                    "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-
-            switch ((String) selection) {
-                case "Atividade":
-
-                    break;
-                case "Centro":
-
-                    break;
-                case "Cidade":
-
-                    break;
-                case "Contato":
-
-                    break;
-                case "Especializacao":
-
-                    break;
-                case "Foto":
-
-                    break;
-                case "Uf":
-                    processoUf();
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
-                    listBoxProcessos();
-            }
-        } catch (Exception e) {
-            chamaMenuPrincipal();
+        Object[] selectionValues = {"Alterar Dados", "Excluir Cadastro"};
+        String initialSelection = (String) selectionValues[0];
+        Object selection = JOptionPane.showInputDialog(null, "Selecione o processo!",
+                "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+        switch ((String) selection) {
+            case "Alterar Dados":
+                menuAlterar();
+                break;
+            case "Excluir Cadastro":
+                menuExcluir();
+                break;
         }
     }
 
@@ -153,6 +127,81 @@ public class MenuView {
                     break;
                 case "Uf":
 
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
+                    listBoxProcessos();
+            }
+        } catch (Exception e) {
+            chamaMenuPrincipal();
+        }
+    }
+
+    public static void menuAlterar(){
+        try {
+            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
+            String initialSelection = (String) selectionValues[0];
+            Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de processo",
+                    "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+
+            switch ((String) selection) {
+                case "Atividade":
+
+                    break;
+                case "Centro":
+
+                    break;
+                case "Cidade":
+
+                    break;
+                case "Contato":
+
+                    break;
+                case "Especializacao":
+
+                    break;
+                case "Foto":
+
+                    break;
+                case "Uf":
+                    UfController.alterarUf();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
+                    listBoxProcessos();
+            }
+        } catch (Exception e) {
+            chamaMenuPrincipal();
+        }
+    }
+    public static void menuExcluir(){
+        try {
+            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
+            String initialSelection = (String) selectionValues[0];
+            Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de processo",
+                    "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+
+            switch ((String) selection) {
+                case "Atividade":
+
+                    break;
+                case "Centro":
+
+                    break;
+                case "Cidade":
+
+                    break;
+                case "Contato":
+
+                    break;
+                case "Especializacao":
+
+                    break;
+                case "Foto":
+
+                    break;
+                case "Uf":
+                    UfController.excluirUf();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
