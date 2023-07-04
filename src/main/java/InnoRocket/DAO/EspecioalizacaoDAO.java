@@ -35,7 +35,7 @@ public class EspecioalizacaoDAO {
         List<String> especializacaoNomes = new ArrayList<>();
 
         for (Especializacao especializacao : especializacoes) {
-            especializacaoNomes.add(especializacao.getDescricao());
+            especializacaoNomes.add(especializacao.getNome());
         }
         return especializacaoNomes.toArray();
     }
@@ -44,7 +44,7 @@ public class EspecioalizacaoDAO {
         List<Especializacao> especializacoes = listar();
         List<Especializacao> especializacoesFiltradas = new ArrayList<>();
         for (Especializacao especializacao : especializacoes) {
-            if (especializacao.getDescricao().contains(descricao)) {
+            if (especializacao.getNome().contains(descricao)) {
                 especializacoesFiltradas.add(especializacao);
             }
         }

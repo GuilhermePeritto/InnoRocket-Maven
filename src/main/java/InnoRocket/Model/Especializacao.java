@@ -11,11 +11,11 @@ public class Especializacao implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer EspecializacaoId;
-    public String descricao;
+    public String nome;
 
-    public Especializacao(Integer especializacaoId, String descricao) {
+    public Especializacao(Integer especializacaoId, String nome) {
         EspecializacaoId = especializacaoId;
-        this.descricao = descricao;
+        this.nome = nome;
     }
 
     public Integer getEspecializacaoId() {
@@ -26,19 +26,19 @@ public class Especializacao implements Serializable {
         EspecializacaoId = especializacaoId;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getNome() {
+        return nome;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     @Override
     public String toString() {
         return "Especializacao{" +
                 "EspecializacaoId=" + EspecializacaoId +
-                ", descricao='" + descricao + '\'' +
+                ", descricao='" + nome + '\'' +
                 '}';
     }
 }

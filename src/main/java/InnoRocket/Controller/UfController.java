@@ -8,11 +8,11 @@ import java.util.List;
 import static InnoRocket.View.MenuView.chamaMenuPrincipal;
 
 public class UfController {
-    public static void cadastroUf() throws ClassNotFoundException {
+    public static void cadastrar() throws ClassNotFoundException {
         String sigla = JOptionPane.showInputDialog("Digite a sigla da uf: ");
         if (sigla.length() > 2){
             JOptionPane.showMessageDialog(null, "A sigla deve conter apenas 2 caracteres.");
-            cadastroUf();
+            cadastrar();
         }
         String nome = JOptionPane.showInputDialog("Digite o nome da uf: ");
         Uf ufCadastrar = new Uf(null,sigla, nome);
@@ -20,7 +20,7 @@ public class UfController {
         chamaMenuPrincipal();
     }
 
-    public static void alterarUf() {
+    public static void alterar() {
         Object[] selectionValues = UfDAO.listarPorSigla();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a UF!",
@@ -31,7 +31,7 @@ public class UfController {
         String sigla = JOptionPane.showInputDialog("Digite a sigla da uf: ", uf.get(0).getSigla());
         if (sigla.length() > 2){
             JOptionPane.showMessageDialog(null, "A sigla deve conter apenas 2 caracteres.");
-            alterarUf();
+            alterar();
         }
         String nome = JOptionPane.showInputDialog("Digite o nome da uf: ", uf.get(0).getNome());
         Uf ufAlterar = new Uf(uf.get(0).getUfId(),sigla, nome);
@@ -39,7 +39,7 @@ public class UfController {
         chamaMenuPrincipal();
     }
 
-    public static void excluirUf() {
+    public static void excluir() {
         Object[] selectionValues = UfDAO.listarPorSigla();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a UF!",

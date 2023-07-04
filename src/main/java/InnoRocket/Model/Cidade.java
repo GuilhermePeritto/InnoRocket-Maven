@@ -11,8 +11,14 @@ public class Cidade implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer cidadeId;
-    public String cidade;
+    public String nome;
     public Uf uf;
+
+    public Cidade(Integer cidadeId, String nome, Uf uf) {
+        this.cidadeId = cidadeId;
+        this.nome = nome;
+        this.uf = uf;
+    }
 
     public Integer getCidadeId() {
         return cidadeId;
@@ -22,12 +28,12 @@ public class Cidade implements Serializable {
         this.cidadeId = cidadeId;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getNome() {
+        return nome;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Uf getUf() {
@@ -42,7 +48,7 @@ public class Cidade implements Serializable {
     public String toString() {
         return "Cidade{" +
                 "cidadeId=" + cidadeId +
-                ", cidade='" + cidade + '\'' +
+                ", cidade='" + nome + '\'' +
                 ", uf=" + uf +
                 '}';
     }

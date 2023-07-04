@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="commit de criação de Model">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/View/UfView.java" beforeDir="false" />
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação das dao">
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/EspecializacaoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/FotoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/MenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/EspecioalizacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/EspecioalizacaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688489804660</updated>
       <workItem from="1688489807015" duration="7069000" />
-      <workItem from="1688507511393" duration="3958000" />
+      <workItem from="1688507511393" duration="5278000" />
     </task>
     <task id="LOCAL-00001" summary="Criação da base">
       <option name="closed" value="true" />
@@ -101,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688511036635</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Criação das dao">
+      <option name="closed" value="true" />
+      <created>1688511819859</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688511819859</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +132,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Criação da base" />
     <MESSAGE value="commit de criação de Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit de criação de Model" />
+    <MESSAGE value="Criação das dao" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação das dao" />
   </component>
 </project>
