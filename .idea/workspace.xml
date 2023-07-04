@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação da base" />
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação da base">
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Foto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +43,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Guilherme.peritto/IdeaProjects/InnoRocket - Maven/src/main/resources",
+    "last_opened_file_path": "C:/Users/perit/Documents/Desenvolvimento/InnoRocket-Maven",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,6 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688489804660</updated>
       <workItem from="1688489807015" duration="7069000" />
+      <workItem from="1688507511393" duration="1451000" />
     </task>
     <task id="LOCAL-00001" summary="Criação da base">
       <option name="closed" value="true" />
