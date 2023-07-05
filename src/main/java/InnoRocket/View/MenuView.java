@@ -58,7 +58,7 @@ public class MenuView {
                     AtividadeController.cadastrar();
                     break;
                 case "Centro":
-//                    CentroController.cadastrar();
+                    CentroController.cadastrar();
                     break;
                 case "Cidade":
                     CidadeController.cadastrar();
