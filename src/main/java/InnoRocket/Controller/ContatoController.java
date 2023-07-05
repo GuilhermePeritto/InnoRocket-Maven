@@ -21,11 +21,11 @@ public class ContatoController {
     }
 
     public static void alterar() {
-        Object[] selectionValues = ContatoDAO.listarPorNomes();
+        Object[] selectionValues = ContatoDAO.listaPorNomes();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione o contato!",
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-        List<Contato> contato = ContatoDAO.buscaPorNome(((String) selection);
+        List<Contato> contato = ContatoDAO.buscaPorNome((String) selection);
 
         String nome = JOptionPane.showInputDialog("Digite o nome do Contato: ", contato.get(0).getNome());
         String telefone = JOptionPane.showInputDialog("Digite o telefone do Contato: ", contato.get(0).getTelefone());

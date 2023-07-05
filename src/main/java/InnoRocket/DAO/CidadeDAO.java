@@ -40,7 +40,7 @@ public class CidadeDAO {
         List<String> cidadeNomes = new ArrayList<>();
 
         for (Cidade cidade : cidades) {
-            cidadeNomes.add(cidade.getCidade());
+            cidadeNomes.add(cidade.getNome());
         }
         return cidadeNomes.toArray();
     }
@@ -49,7 +49,7 @@ public class CidadeDAO {
         List<Cidade> cidades = listar();
         List<Cidade> cidadeFiltradas = new ArrayList<>();
         for (Cidade centro : cidades) {
-            if (centro.getCidade().contains(nome)) {
+            if (centro.getNome().contains(nome)) {
                 cidadeFiltradas.add(centro);
             }
         }

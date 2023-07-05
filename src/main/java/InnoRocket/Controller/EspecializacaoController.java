@@ -1,10 +1,7 @@
 package InnoRocket.Controller;
 
 import InnoRocket.DAO.EspecioalizacaoDAO;
-import InnoRocket.DAO.FotoDAO;
 import InnoRocket.Model.Especializacao;
-import InnoRocket.Model.Foto;
-
 import javax.swing.*;
 import java.util.List;
 

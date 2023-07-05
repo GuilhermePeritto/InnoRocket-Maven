@@ -9,7 +9,7 @@ import java.util.List;
 import static InnoRocket.View.MenuView.chamaMenuPrincipal;
 
 public class AtividadeController {
-    public static void cadastro() throws ClassNotFoundException {
+    public static void cadastrar() throws ClassNotFoundException {
         String nome = JOptionPane.showInputDialog("Digite o nome da atividade: ");
         String descricao = JOptionPane.showInputDialog("Digite a descrição da atividade: ");
 
