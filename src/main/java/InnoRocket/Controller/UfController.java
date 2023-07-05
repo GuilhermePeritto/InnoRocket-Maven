@@ -11,9 +11,11 @@ import static InnoRocket.View.MenuView.menuExcluir;
 public class UfController {
     public static void cadastroUf() throws ClassNotFoundException {
         String sigla = JOptionPane.showInputDialog("Digite a sigla da UF: ");
+    public static void cadastrar() throws ClassNotFoundException {
+        String sigla = JOptionPane.showInputDialog("Digite a sigla da uf: ");
         if (sigla.length() > 2){
             JOptionPane.showMessageDialog(null, "A sigla deve conter apenas 2 caracteres.");
-            cadastroUf();
+            cadastrar();
         }
         String nome = JOptionPane.showInputDialog("Digite o nome da UF: ");
         Uf ufCadastrar = new Uf(null,sigla, nome);
@@ -22,7 +24,7 @@ public class UfController {
         chamaMenuPrincipal();
     }
 
-    public static void alterarUf() {
+    public static void alterar() {
         Object[] selectionValues = UfDAO.listarPorSigla();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a UF",
@@ -33,7 +35,7 @@ public class UfController {
         String sigla = JOptionPane.showInputDialog("Digite a sigla da UF: ", uf.get(0).getSigla());
         if (sigla.length() > 2){
             JOptionPane.showMessageDialog(null, "A sigla deve conter apenas 2 caracteres.");
-            alterarUf();
+            alterar();
         }
         String nome = JOptionPane.showInputDialog("Digite o nome da UF: ", uf.get(0).getNome());
         Uf ufAlterar = new Uf(uf.get(0).getUfId(),sigla, nome);
@@ -68,6 +70,13 @@ public class UfController {
             chamaMenuPrincipal();
         }
         JOptionPane.showMessageDialog(null, "Cadastro excluído com sucesso!");
+    public static void excluir() {
+        Object[] selectionValues = UfDAO.listarPorSigla();
+        String initialSelection = (String) selectionValues[0];
+        Object selection = JOptionPane.showInputDialog(null, "Selecione a UF!",
+                "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+        List<Uf> uf = UfDAO.buscaPorSigla((String) selection);
+        UfDAO.excluir(uf.get(0));
         chamaMenuPrincipal();
     }
 }

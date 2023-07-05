@@ -1,18 +1,29 @@
 package InnoRocket.Model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
 public class Cidade implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer cidadeId;
-    public String cidade;
+    public String nome;
+    @ManyToOne
+    @JoinColumn(name = "ufId", referencedColumnName = "ufId", nullable = false)
     public Uf uf;
+
+    public Cidade(Integer cidadeId, String nome, Uf uf) {
+        this.cidadeId = cidadeId;
+        this.nome = nome;
+        this.uf = uf;
+    }
+
+    public Cidade() {
+
+    }
 
     public Integer getCidadeId() {
         return cidadeId;
@@ -22,12 +33,12 @@ public class Cidade implements Serializable {
         this.cidadeId = cidadeId;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getNome() {
+        return nome;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Uf getUf() {
@@ -42,7 +53,7 @@ public class Cidade implements Serializable {
     public String toString() {
         return "Cidade{" +
                 "cidadeId=" + cidadeId +
-                ", cidade='" + cidade + '\'' +
+                ", cidade='" + nome + '\'' +
                 ", uf=" + uf +
                 '}';
     }

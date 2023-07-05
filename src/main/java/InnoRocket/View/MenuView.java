@@ -1,10 +1,21 @@
 package InnoRocket.View;
 
-import InnoRocket.Controller.UfController;
+import InnoRocket.Controller.*;
+import InnoRocket.DAO.*;
+
 import javax.swing.*;
-import static InnoRocket.Controller.UfController.cadastroUf;
 
 public class MenuView {
+
+    public  static void sincronizarBanco(){
+        AtividadeDAO.listar();
+        CentroDAO.listar();
+        CidadeDAO.listar();
+        ContatoDAO.listar();
+        EspecioalizacaoDAO.listar();
+        FotoDAO.listar();
+        UfDAO.listar();
+    }
     public static void chamaMenuPrincipal(){
         try {
             String[] opcoesMenu = {"Cadastros", "Processos", "Relatorios", "Sair"};
@@ -44,25 +55,25 @@ public class MenuView {
 
             switch ((String) selection) {
                 case "Atividade":
-//                    cadastroAtividade();
+                    AtividadeController.cadastrar();
                     break;
                 case "Centro":
-
+//                    CentroController.cadastrar();
                     break;
                 case "Cidade":
-//                    cadastroCidade();
+                    CidadeController.cadastrar();
                     break;
                 case "Contato":
-//                    cadastroContato();
+                    ContatoController.cadastrar();
                     break;
                 case "Especializacao":
-//                    cadastroEspecializacao();
+                    EspecializacaoController.cadastrar();
                     break;
                 case "Foto":
-
+                    FotoController.cadastrar();
                     break;
                 case "Uf":
-                    cadastroUf();
+                    UfController.cadastrar();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
@@ -125,7 +136,7 @@ public class MenuView {
 
                     break;
                 case "Centro":
-
+//
                     break;
                 case "Cidade":
 
@@ -160,25 +171,25 @@ public class MenuView {
 
             switch ((String) selection) {
                 case "Atividade":
-
+                    AtividadeController.alterar();
                     break;
                 case "Centro":
-
+//                    CentroController.alterar();
                     break;
                 case "Cidade":
-
+                    CidadeController.alterar();
                     break;
                 case "Contato":
-
+                    ContatoController.alterar();
                     break;
                 case "Especializacao":
-
+                    EspecializacaoController.alterar();
                     break;
                 case "Foto":
-
+                    FotoController.alterar();
                     break;
                 case "Uf":
-                    UfController.alterarUf();
+                    UfController.alterar();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
@@ -208,25 +219,27 @@ public class MenuView {
 
             switch ((String) selection) {
                 case "Atividade":
-
+                    AtividadeController.excluir();
                     break;
                 case "Centro":
 
                     break;
                 case "Cidade":
-
+                    CidadeController.excluir();
                     break;
                 case "Contato":
-
+                    ContatoController.excluir();
                     break;
                 case "Especializacao":
-
+                    EspecializacaoController.excluir();
                     break;
                 case "Foto":
-
+                    FotoController.excluir();
                     break;
                 case "UF":
                     UfController.excluirUf();
+                case "Uf":
+                    UfController.excluir();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");

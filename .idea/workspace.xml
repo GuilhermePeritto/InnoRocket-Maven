@@ -8,6 +8,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" afterDir="false" />
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação das relações entre tabelas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableAtividade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableCentro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableCidade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableContato.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableEspecializacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableFoto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableUf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ControController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/CentroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Contato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Contato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +44,16 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2S7FdS6HeotihM0Ad44TvMhcU1N" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,6 +64,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/perit/Documents/Desenvolvimento/AlugueSports",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Guilherme.peritto\IdeaProjects\InnoRocket - Maven\src\main\resources" />
@@ -64,6 +104,9 @@
       <updated>1688489804660</updated>
       <workItem from="1688489807015" duration="7069000" />
       <workItem from="1688507511393" duration="3958000" />
+      <workItem from="1688573951789" duration="456000" />
+      <workItem from="1688574417940" duration="1128000" />
+      <workItem from="1688575838315" duration="8747000" />
     </task>
     <task id="LOCAL-00001" summary="Criação da base">
       <option name="closed" value="true" />
@@ -73,31 +116,39 @@
       <option name="project" value="LOCAL" />
       <updated>1688497844414</updated>
     </task>
-    <task id="LOCAL-00002" summary="Criação das model">
+    <task id="LOCAL-00002" summary="Criação dos Controllers">
       <option name="closed" value="true" />
-      <created>1688509107550</created>
+      <created>1688515362849</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1688509107550</updated>
+      <updated>1688515362849</updated>
     </task>
-    <task id="LOCAL-00003" summary="Criação das model">
+    <task id="LOCAL-00003" summary="Correção importantissima">
       <option name="closed" value="true" />
-      <created>1688509387050</created>
+      <created>1688576553636</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1688509387050</updated>
+      <updated>1688576553636</updated>
     </task>
-    <task id="LOCAL-00004" summary="Criação das dao">
+    <task id="LOCAL-00004" summary="Criação de um metodo para pré carregar as informações do banco e melhorar o desempenho soncideravelmente eee UMA CORREÇÃO IMPORTANTICIMA">
       <option name="closed" value="true" />
-      <created>1688511036635</created>
+      <created>1688576819841</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1688511036635</updated>
+      <updated>1688576819841</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Criação das relações entre tabelas">
+      <option name="closed" value="true" />
+      <created>1688579718107</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688579718107</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +170,56 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Criação da base" />
     <MESSAGE value="commit de criação de Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit de criação de Model" />
+    <MESSAGE value="Criação dos Controllers" />
+    <MESSAGE value="Correção importantissima" />
+    <MESSAGE value="Criação de um metodo para pré carregar as informações do banco e melhorar o desempenho soncideravelmente eee UMA CORREÇÃO IMPORTANTICIMA" />
+    <MESSAGE value="Criação das relações entre tabelas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação das relações entre tabelas" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

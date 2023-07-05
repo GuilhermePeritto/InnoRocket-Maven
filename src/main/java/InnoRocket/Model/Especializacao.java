@@ -1,21 +1,25 @@
 package InnoRocket.Model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
+@Entity
 public class Especializacao implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer EspecializacaoId;
-    public String descricao;
+    public String nome;
 
-    public Especializacao(Integer especializacaoId, String descricao) {
+    public Especializacao(Integer especializacaoId, String nome) {
         EspecializacaoId = especializacaoId;
-        this.descricao = descricao;
+        this.nome = nome;
+    }
+
+    public Especializacao() {
+
     }
 
     public Integer getEspecializacaoId() {
@@ -26,19 +30,19 @@ public class Especializacao implements Serializable {
         EspecializacaoId = especializacaoId;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getNome() {
+        return nome;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     @Override
     public String toString() {
         return "Especializacao{" +
                 "EspecializacaoId=" + EspecializacaoId +
-                ", descricao='" + descricao + '\'' +
+                ", nome='" + nome + '\'' +
                 '}';
     }
 }
