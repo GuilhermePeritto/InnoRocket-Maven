@@ -1,6 +1,8 @@
 package InnoRocket.Controller;
 
+import InnoRocket.DAO.CentroDAO;
 import InnoRocket.DAO.ContatoDAO;
+import InnoRocket.Model.Centro;
 import InnoRocket.Model.Contato;
 
 import javax.swing.*;
@@ -14,12 +16,14 @@ public class ContatoController {
         String nome = getValidNome(null);
         String telefone = getValidTelefone(null);
         String email = JOptionPane.showInputDialog("Digite o email do Contato: ");
-
-        if (nome != null && telefone != null) {
-            Contato contato = new Contato(null, nome, telefone, email);
-            ContatoDAO.salvar(contato);
-            chamaMenuPrincipal();
-        }
+        Object[] selection = CentroDAO.listaPorNomes();
+        String initialSelection = (String) selection[0];
+        Object selectionCentro = JOptionPane.showInputDialog(null, "Selecione o Centro!",
+                "Processo", JOptionPane.QUESTION_MESSAGE, null, selection, initialSelection);
+        List<Centro> centro = CentroDAO.buscaPorNome((String) selectionCentro);
+        Contato contato = new Contato(null, nome, telefone, email, centro.get(0));
+        ContatoDAO.salvar(contato);
+        chamaMenuPrincipal();
     }
 
     public static void alterar() {
@@ -32,8 +36,12 @@ public class ContatoController {
         String nome = getValidNome(contato.get(0).getNome());
         String telefone = getValidTelefone(contato.get(0).getTelefone());
         String email = JOptionPane.showInputDialog("Digite o email do Contato: ", contato.get(0).getEmail());
-        Contato contatoAlterar = new Contato(null, nome, telefone, email);
-
+        Object[] selectionCentro = CentroDAO.listaPorNomes();
+        String initialSelectionCentro = (String) contato.get(0).getCentro().getNome();
+        Object selectionCentroAlterar = JOptionPane.showInputDialog(null, "Selecione o Centro!",
+                "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionCentro, initialSelectionCentro);
+        List<Centro> centro = CentroDAO.buscaPorNome((String) selectionCentroAlterar);
+        Contato contatoAlterar = new Contato(null, nome, telefone, email, centro.get(0));
         ContatoDAO.alterar(contatoAlterar);
         chamaMenuPrincipal();
     }

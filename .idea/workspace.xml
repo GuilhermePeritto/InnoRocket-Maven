@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Correção importantissima">
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" afterDir="false" />
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação de um metodo para pré carregar as informações do banco e melhorar o desempenho soncideravelmente eee UMA CORREÇÃO IMPORTANTICIMA">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ContatoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ContatoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ControController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ControController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Cidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Cidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Contato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Contato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +92,7 @@
       <workItem from="1688507511393" duration="3958000" />
       <workItem from="1688573951789" duration="456000" />
       <workItem from="1688574417940" duration="1128000" />
-      <workItem from="1688575838315" duration="928000" />
+      <workItem from="1688575838315" duration="3595000" />
     </task>
     <task id="LOCAL-00001" summary="Criação da base">
       <option name="closed" value="true" />
@@ -112,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688576553636</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Criação de um metodo para pré carregar as informações do banco e melhorar o desempenho soncideravelmente eee UMA CORREÇÃO IMPORTANTICIMA">
+      <option name="closed" value="true" />
+      <created>1688576819841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688576819841</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,7 +149,8 @@
     <MESSAGE value="commit de criação de Model" />
     <MESSAGE value="Criação dos Controllers" />
     <MESSAGE value="Correção importantissima" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correção importantissima" />
+    <MESSAGE value="Criação de um metodo para pré carregar as informações do banco e melhorar o desempenho soncideravelmente eee UMA CORREÇÃO IMPORTANTICIMA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação de um metodo para pré carregar as informações do banco e melhorar o desempenho soncideravelmente eee UMA CORREÇÃO IMPORTANTICIMA" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

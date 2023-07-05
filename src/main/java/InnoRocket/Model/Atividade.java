@@ -1,9 +1,7 @@
 package InnoRocket.Model;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Atividade implements Serializable {
@@ -15,6 +13,11 @@ public class Atividade implements Serializable {
 
     public String nome;
     public String descricao;
+    @ManyToMany
+    @JoinTable(name = "CentroAtividade",
+            joinColumns = @JoinColumn(name = "AtividadeId"),
+            inverseJoinColumns = @JoinColumn(name = "CentroId"))
+    public List<Centro> centro;
 
     public Atividade(Integer atividadeId, String nome, String descricao) {
         this.atividadeId = atividadeId;

@@ -62,7 +62,7 @@ public class ControController {
         Object selection4 = JOptionPane.showInputDialog(null, "Selecione a atividade!",
                 "Listar Atividades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Atividade> ativiadade = AtividadeDAO.buscaPorNome((String) selection);
-        Centro centro = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, fotos.get(0), dataCadastro, dataCriacao, especializacaos.get(0), contato.get(0), ativiadade.get(0));
+        Centro centro = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, fotos.get(0), dataCadastro, dataCriacao, especializacaos, contato.get(0), ativiadade);
         CentroDAO.salvar(centro);
         System.out.println("Centro cadastrada com sucesso!");
         chamaMenuPrincipal();
@@ -111,7 +111,7 @@ public class ControController {
             JOptionPane.showMessageDialog(null, "Data invalida, tente no formato dd/MM/yyyy");
         }
         Object[] selectionValues2 = EspecioalizacaoDAO.listaPorNomes();
-        String initialSelection2 = (String) centro.get(0).getEspecializacao().getNome();
+        String initialSelection2 = (String) centro.get(0).getEspecializacao().get(0).getNome();
         Object selection2 = JOptionPane.showInputDialog(null, "Selecione a especializacao!",
                 "Listar Especializações", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Especializacao> especializacaos = EspecioalizacaoDAO.buscaPorNome((String) selection);
@@ -121,11 +121,11 @@ public class ControController {
                 "Listar Contatos", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Contato> contato = ContatoDAO.buscaPorNome((String) selection);
         Object[] selectionValues4 = AtividadeDAO.listaPorNome();
-        String initialSelection4 = (String) centro.get(0).getAtividade().getNome();
+        String initialSelection4 = (String) centro.get(0).getAtividade().get(0).getNome();
         Object selection4 = JOptionPane.showInputDialog(null, "Selecione a atividade!",
                 "Listar Atividades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Atividade> ativiadade = AtividadeDAO.buscaPorNome((String) selection);
-        Centro centroAlterar = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, foto.get(0), dataCadastro, dataCriacao, especializacaos.get(0), contato.get(0), ativiadade.get(0));
+        Centro centroAlterar = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, foto.get(0), dataCadastro, dataCriacao, especializacaos, contato.get(0), ativiadade);
         CentroDAO.alterar(centroAlterar);
         System.out.println("Centro alterada com sucesso!");
 

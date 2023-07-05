@@ -1,9 +1,6 @@
 package InnoRocket.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -14,6 +11,8 @@ public class Cidade implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer cidadeId;
     public String nome;
+    @ManyToOne
+    @JoinColumn(name = "ufId", referencedColumnName = "ufId", nullable = false)
     public Uf uf;
 
     public Cidade(Integer cidadeId, String nome, Uf uf) {

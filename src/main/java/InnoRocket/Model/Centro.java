@@ -1,11 +1,9 @@
 package InnoRocket.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Centro implements Serializable {
@@ -20,20 +18,27 @@ public class Centro implements Serializable {
     public String numero;
     public String bairro;
     public String complemento;
+    @ManyToOne
+    @JoinColumn(name = "cidadeId", referencedColumnName = "cidadeId", nullable = false)
     public Cidade cidade;
     public EnumStatusCentro status;
     public String redesSociais;
+    @ManyToOne
+    @JoinColumn(name = "fotoId", referencedColumnName = "fotoId", nullable = false)
     public Foto foto;
     public LocalDate dataCadastro;
     public LocalDate dataCriacao;
 
     //Estes ultimos nao tenho certeza por conta da tabela relacionamento!!!
-    public Especializacao especializacao;
+    @ManyToMany(mappedBy = "centros")
+    public List<Especializacao> especializacao;
+    @OneToOne(mappedBy = "centro")
     public Contato contato;
-    public Atividade atividade;
+    @ManyToMany(mappedBy = "centro")
+    public List<Atividade> atividade;
 
 
-    public Centro(Integer centroId, String nome, String rua, String cep, String numero, String bairro, String complemento, Cidade cidade, EnumStatusCentro status, String redesSociais, Foto foto, LocalDate dataCadastro, LocalDate dataCriacao, Especializacao especializacao, Contato contato, Atividade atividade) {
+    public Centro(Integer centroId, String nome, String rua, String cep, String numero, String bairro, String complemento, Cidade cidade, EnumStatusCentro status, String redesSociais, Foto foto, LocalDate dataCadastro, LocalDate dataCriacao, List<Especializacao> especializacao, Contato contato, List<Atividade> atividade) {
         CentroId = centroId;
         this.nome = nome;
         this.rua = rua;
@@ -50,10 +55,6 @@ public class Centro implements Serializable {
         this.especializacao = especializacao;
         this.contato = contato;
         this.atividade = atividade;
-    }
-
-    public Centro() {
-
     }
 
     public Integer getCentroId() {
@@ -160,11 +161,11 @@ public class Centro implements Serializable {
         this.dataCriacao = dataCriacao;
     }
 
-    public Especializacao getEspecializacao() {
+    public List<Especializacao> getEspecializacao() {
         return especializacao;
     }
 
-    public void setEspecializacao(Especializacao especializacao) {
+    public void setEspecializacao(List<Especializacao> especializacao) {
         this.especializacao = especializacao;
     }
 
@@ -176,11 +177,11 @@ public class Centro implements Serializable {
         this.contato = contato;
     }
 
-    public Atividade getAtividade() {
+    public List<Atividade> getAtividade() {
         return atividade;
     }
 
-    public void setAtividade(Atividade atividade) {
+    public void setAtividade(List<Atividade> atividade) {
         this.atividade = atividade;
     }
 
