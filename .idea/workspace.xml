@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="commit de criação de Model">
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="commit de criação de Model"/>
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" afterDir="false" />

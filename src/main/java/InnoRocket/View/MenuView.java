@@ -2,6 +2,7 @@ package InnoRocket.View;
 
 import InnoRocket.Controller.*;
 import InnoRocket.DAO.*;
+import InnoRocket.Form.RelatorioUfForm;
 
 import javax.swing.*;
 
@@ -151,7 +152,7 @@ public class MenuView {
 
                     break;
                 case "Uf":
-
+                    RelatorioUfForm.emitirRelatorio(UfDAO.listar());
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
