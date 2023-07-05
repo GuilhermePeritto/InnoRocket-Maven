@@ -9,8 +9,6 @@ import static InnoRocket.View.MenuView.chamaMenuPrincipal;
 import static InnoRocket.View.MenuView.menuExcluir;
 
 public class UfController {
-    public static void cadastroUf() throws ClassNotFoundException {
-        String sigla = JOptionPane.showInputDialog("Digite a sigla da UF: ");
     public static void cadastrar() throws ClassNotFoundException {
         String sigla = JOptionPane.showInputDialog("Digite a sigla da uf: ");
         if (sigla.length() > 2){
@@ -44,7 +42,7 @@ public class UfController {
         chamaMenuPrincipal();
     }
 
-    public static void excluirUf() {
+    public static void excluir() {
         try {
             Object[] selectionValues = UfDAO.listarPorSigla();
             String initialSelection = (String) selectionValues[0];
@@ -56,7 +54,7 @@ public class UfController {
             if (opcaoExcluir == JOptionPane.YES_NO_OPTION) {
                 UfDAO.excluir(uf.get(0));
             } else {
-                excluirUf();
+                excluir();
             }
         } catch (NullPointerException e) {
             int opcaoCancelar = JOptionPane.showOptionDialog(null, "Deseja realmente cancelar?",
@@ -70,13 +68,5 @@ public class UfController {
             chamaMenuPrincipal();
         }
         JOptionPane.showMessageDialog(null, "Cadastro excluído com sucesso!");
-    public static void excluir() {
-        Object[] selectionValues = UfDAO.listarPorSigla();
-        String initialSelection = (String) selectionValues[0];
-        Object selection = JOptionPane.showInputDialog(null, "Selecione a UF!",
-                "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-        List<Uf> uf = UfDAO.buscaPorSigla((String) selection);
-        UfDAO.excluir(uf.get(0));
-        chamaMenuPrincipal();
     }
 }
