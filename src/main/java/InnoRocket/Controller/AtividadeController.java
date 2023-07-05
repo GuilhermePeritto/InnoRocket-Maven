@@ -2,11 +2,8 @@ package InnoRocket.Controller;
 
 import InnoRocket.DAO.AtividadeDAO;
 import InnoRocket.Model.Atividade;
-
 import javax.swing.*;
 import java.util.List;
-
-import static InnoRocket.View.MenuView.chamaMenuPrincipal;
 
 public class AtividadeController {
     public static void cadastrar() throws ClassNotFoundException {
@@ -17,7 +14,6 @@ public class AtividadeController {
 
         AtividadeDAO.salvar(atividade);
         System.out.println("Atividade cadastrada com sucesso!");
-        chamaMenuPrincipal();
     }
 
     public static void alterar() {
@@ -31,8 +27,6 @@ public class AtividadeController {
         Atividade atividadeAlterar = new Atividade(atividades.get(0).getAtividadeId(), nome, descricao);
         AtividadeDAO.alterar(atividadeAlterar);
         System.out.println("Atividade alterada com sucesso!");
-
-        chamaMenuPrincipal();
     }
 
     public static void excluir() {
@@ -44,7 +38,5 @@ public class AtividadeController {
 
         AtividadeDAO.excluir(atividades.get(0));
         System.out.println("Atividade excluída com sucesso!");
-
-        chamaMenuPrincipal();
     }
 }

@@ -8,8 +8,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import static InnoRocket.View.MenuView.chamaMenuPrincipal;
-
 public class CentroController {
     public static void cadastrar() throws ClassNotFoundException {
         String nome = JOptionPane.showInputDialog("Digite o nome do Centro: ");
@@ -65,7 +63,6 @@ public class CentroController {
         Centro centro = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, fotos.get(0), dataCadastro, dataCriacao, especializacaos, contato.get(0), ativiadade);
         CentroDAO.salvar(centro);
         System.out.println("Centro cadastrada com sucesso!");
-        chamaMenuPrincipal();
     }
 
     public static void alterar() {
@@ -128,8 +125,6 @@ public class CentroController {
         Centro centroAlterar = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, foto.get(0), dataCadastro, dataCriacao, especializacaos, contato.get(0), ativiadade);
         CentroDAO.alterar(centroAlterar);
         System.out.println("Centro alterada com sucesso!");
-
-        chamaMenuPrincipal();
     }
 
     public static void excluir() {
@@ -141,6 +136,5 @@ public class CentroController {
 
         CentroDAO.excluir(centros.get(0));
         System.out.println("Centro excluída com sucesso!");
-        chamaMenuPrincipal();
     }
 }

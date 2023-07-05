@@ -10,8 +10,6 @@ import InnoRocket.Model.Uf;
 import javax.swing.*;
 import java.util.List;
 
-import static InnoRocket.View.MenuView.chamaMenuPrincipal;
-
 public class CidadeController {
     public static void cadastrar() throws ClassNotFoundException {
         String nome = JOptionPane.showInputDialog("Digite o nome da cidade: ");
@@ -22,7 +20,6 @@ public class CidadeController {
         List<Uf> uf = UfDAO.buscaPorSigla((String) selection);
         Cidade cidade = new Cidade(null, nome, uf.get(0));
         CidadeDAO.salvar(cidade);
-        chamaMenuPrincipal();
     }
 
     public static void alterar() {
@@ -39,7 +36,6 @@ public class CidadeController {
         List<Uf> uf = UfDAO.buscaPorSigla((String) selection1);
         Cidade cidadeAlterar = new Cidade(null, nome, uf.get(0));
         CidadeDAO.alterar(cidadeAlterar);
-        chamaMenuPrincipal();
     }
 
     public static void excluir() {
@@ -49,6 +45,5 @@ public class CidadeController {
                 "lista de Cidades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
         CidadeDAO.excluir(cidade.get(0));
-        chamaMenuPrincipal();
     }
 }

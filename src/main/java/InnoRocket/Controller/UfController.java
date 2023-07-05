@@ -3,8 +3,6 @@ import InnoRocket.DAO.*;
 import InnoRocket.Model.Uf;
 import javax.swing.*;
 import java.util.List;
-
-import static InnoRocket.View.MenuView.chamaMenuPrincipal;
 import static InnoRocket.View.MenuView.menuExcluir;
 
 public class UfController {
@@ -18,7 +16,6 @@ public class UfController {
         Uf ufCadastrar = new Uf(null,sigla, nome);
         UfDAO.salvar(ufCadastrar);
         JOptionPane.showMessageDialog(null, "Cadastro criado com sucesso!");
-        chamaMenuPrincipal();
     }
 
     public static void alterar() {
@@ -38,7 +35,6 @@ public class UfController {
         Uf ufAlterar = new Uf(uf.get(0).getUfId(),sigla, nome);
         UfDAO.alterar(ufAlterar);
         JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!");
-        chamaMenuPrincipal();
     }
 
     public static void excluir() {
@@ -62,7 +58,7 @@ public class UfController {
                 menuExcluir();
             }
         } catch (Exception e) {
-            chamaMenuPrincipal();
+            JOptionPane.showMessageDialog(null, "Erro ao excluir o registro!");
         }
         JOptionPane.showMessageDialog(null, "Cadastro excluído com sucesso!");
     }

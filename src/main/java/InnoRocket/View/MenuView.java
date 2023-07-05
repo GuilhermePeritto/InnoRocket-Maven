@@ -17,38 +17,6 @@ public class MenuView {
         FotoDAO.listar();
         UfDAO.listar();
     }
-
-    public static void chamaMenuPrincipal() {
-        try {
-            String[] opcoesMenu = {"Cadastros", "Processos", "Relatorios", "Sair"};
-            int opcao = JOptionPane.showOptionDialog(null, "Escolha uma opção: ",
-                    "Menu Principal",
-                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesMenu, opcoesMenu[0]);
-            switch (opcao) {
-                case 0: //Cadastros
-                    listBoxCadastros();
-                    break;
-                case 1: //Processos
-                    listBoxProcessos();
-                    break;
-                case 2: //Relatorios
-                    listBoxRelatorios();
-                    break;
-                case 3: //Sair
-                    int opcaoSair = JOptionPane.showOptionDialog(null, " Deseja realmente sair ? ",
-                            "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-
-                    if (opcaoSair == JOptionPane.YES_NO_OPTION) {
-                        System.exit(0);
-                    } else {
-                        chamaMenuPrincipal();
-                    }
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu principal." + e.getMessage());
-        }
-    }
-
     public static void listBoxCadastros() {
         try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
@@ -86,13 +54,11 @@ public class MenuView {
             int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
                     "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
             if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-                chamaMenuPrincipal();
             } else {
                 listBoxCadastros();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
-            chamaMenuPrincipal();
         }
     }
 
@@ -114,13 +80,11 @@ public class MenuView {
             int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
                     "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
             if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-                chamaMenuPrincipal();
             } else {
                 listBoxProcessos();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
-            chamaMenuPrincipal();
         }
 
     }
@@ -156,7 +120,7 @@ public class MenuView {
                     listBoxProcessos();
             }
         } catch (Exception e) {
-            chamaMenuPrincipal();
+            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
         }
     }
 
@@ -203,7 +167,7 @@ public class MenuView {
                 menuAlterar();
             }
         } catch (Exception e) {
-            chamaMenuPrincipal();
+            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de processos." + e.getMessage());
         }
     }
 
@@ -248,7 +212,7 @@ public class MenuView {
                 menuExcluir();
             }
         } catch (Exception e) {
-            chamaMenuPrincipal();
+            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de exclusão." + e.getMessage());
         }
     }
 }

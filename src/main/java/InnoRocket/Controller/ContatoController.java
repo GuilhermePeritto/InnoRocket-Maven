@@ -1,15 +1,11 @@
 package InnoRocket.Controller;
 
-import InnoRocket.DAO.CentroDAO;
 import InnoRocket.DAO.ContatoDAO;
-import InnoRocket.Model.Centro;
 import InnoRocket.Model.Contato;
-
 import javax.swing.*;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import static InnoRocket.View.MenuView.chamaMenuPrincipal;
 
 public class ContatoController {
     public static void cadastrar() throws ClassNotFoundException {
@@ -18,7 +14,6 @@ public class ContatoController {
         String email = JOptionPane.showInputDialog("Digite o email do Contato: ");
         Contato contato = new Contato(null, nome, telefone, email);
         ContatoDAO.salvar(contato);
-        chamaMenuPrincipal();
     }
 
     public static void alterar() {
@@ -33,7 +28,6 @@ public class ContatoController {
         String email = JOptionPane.showInputDialog("Digite o email do Contato: ", contato.get(0).getEmail());
         Contato contatoAlterar = new Contato(null, nome, telefone, email);
         ContatoDAO.alterar(contatoAlterar);
-        chamaMenuPrincipal();
     }
 
 //    public static void alterar() {
@@ -59,7 +53,6 @@ public class ContatoController {
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Contato> contato = ContatoDAO.buscaPorNome((String) selection);
         ContatoDAO.excluir(contato.get(0));
-        chamaMenuPrincipal();
     }
 
 

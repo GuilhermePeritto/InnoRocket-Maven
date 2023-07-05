@@ -5,14 +5,12 @@ import InnoRocket.Model.Especializacao;
 import javax.swing.*;
 import java.util.List;
 
-import static InnoRocket.View.MenuView.chamaMenuPrincipal;
 
 public class EspecializacaoController {
     public static void cadastrar() throws ClassNotFoundException {
         String nome = JOptionPane.showInputDialog("Digite a nome da Especializacao: ");
         Especializacao especializacao = new Especializacao(null, nome);
         EspecioalizacaoDAO.salvar(especializacao);
-        chamaMenuPrincipal();
     }
 
     public static void alterar() {
@@ -26,7 +24,6 @@ public class EspecializacaoController {
 
         Especializacao especializacaoAlterar = new Especializacao(especializacao.get(0).getEspecializacaoId(), nome);
         EspecioalizacaoDAO.alterar(especializacaoAlterar);
-        chamaMenuPrincipal();
     }
 
     public static void excluir() {
@@ -36,6 +33,5 @@ public class EspecializacaoController {
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Especializacao> especializacao = EspecioalizacaoDAO.buscaPorNome((String) selection);
         EspecioalizacaoDAO.excluir(especializacao.get(0));
-        chamaMenuPrincipal();
     }
 }
