@@ -1,25 +1,37 @@
 package InnoRocket.Model;
-
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+@Entity
 public class Atividade implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer AtividadeId;
+    public Integer atividadeId;
+
     public String nome;
     public String descricao;
 
+    public Atividade(Integer atividadeId, String nome, String descricao) {
+        this.atividadeId = atividadeId;
+        this.nome = nome;
+        this.descricao = descricao;
+    }
+
+    public Atividade() {
+
+    }
+
     public Integer getAtividadeId() {
-        return AtividadeId;
+        return atividadeId;
     }
 
     public void setAtividadeId(Integer atividadeId) {
-        AtividadeId = atividadeId;
+        this.atividadeId = atividadeId;
     }
 
     public String getNome() {
@@ -41,7 +53,7 @@ public class Atividade implements Serializable {
     @Override
     public String toString() {
         return "Atividade{" +
-                "AtividadeId=" + AtividadeId +
+                "atividadeId=" + atividadeId +
                 ", nome='" + nome + '\'' +
                 ", descricao='" + descricao + '\'' +
                 '}';

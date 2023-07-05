@@ -1,10 +1,12 @@
 package InnoRocket.Model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+@Entity
 public class Contato implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -20,6 +22,10 @@ public class Contato implements Serializable {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
+    }
+
+    public Contato() {
+
     }
 
     public Integer getContatoId() {

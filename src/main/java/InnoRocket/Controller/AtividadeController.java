@@ -13,13 +13,10 @@ public class AtividadeController {
         String nome = JOptionPane.showInputDialog("Digite o nome da atividade: ");
         String descricao = JOptionPane.showInputDialog("Digite a descrição da atividade: ");
 
-        Atividade atividadeCadastrar = new Atividade();
-        atividadeCadastrar.setNome(nome);
-        atividadeCadastrar.setDescricao(descricao);
+        Atividade atividade = new Atividade(null, nome, descricao);
 
-        AtividadeDAO.salvar(atividadeCadastrar);
+        AtividadeDAO.salvar(atividade);
         System.out.println("Atividade cadastrada com sucesso!");
-
         chamaMenuPrincipal();
     }
 
@@ -29,15 +26,9 @@ public class AtividadeController {
         Object selection = JOptionPane.showInputDialog(null, "Selecione a atividade!",
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Atividade> atividades = AtividadeDAO.buscaPorNome((String) selection);
-
         String nome = JOptionPane.showInputDialog("Digite o nome da atividade: ", atividades.get(0).getNome());
         String descricao = JOptionPane.showInputDialog("Digite a descrição da atividade: ", atividades.get(0).getDescricao());
-
-        Atividade atividadeAlterar = new Atividade();
-        atividadeAlterar.setAtividadeId(atividades.get(0).getAtividadeId());
-        atividadeAlterar.setNome(nome);
-        atividadeAlterar.setDescricao(descricao);
-
+        Atividade atividadeAlterar = new Atividade(atividades.get(0).getAtividadeId(), nome, descricao);
         AtividadeDAO.alterar(atividadeAlterar);
         System.out.println("Atividade alterada com sucesso!");
 

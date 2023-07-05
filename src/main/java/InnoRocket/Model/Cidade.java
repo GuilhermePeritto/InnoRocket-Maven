@@ -1,10 +1,12 @@
 package InnoRocket.Model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+@Entity
 public class Cidade implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -18,6 +20,10 @@ public class Cidade implements Serializable {
         this.cidadeId = cidadeId;
         this.nome = nome;
         this.uf = uf;
+    }
+
+    public Cidade() {
+
     }
 
     public Integer getCidadeId() {

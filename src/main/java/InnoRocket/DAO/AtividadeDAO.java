@@ -29,10 +29,10 @@ public class AtividadeDAO {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
         TypedQuery<Atividade> query = em.createQuery("SELECT atividade FROM Atividade atividade", Atividade.class);
-        List<Atividade> ufs = query.getResultList();
+        List<Atividade> atividades = query.getResultList();
         em.close();
         emf.close();
-        return ufs;
+        return atividades;
     }
 
     public static Object[] listaPorNome() {
