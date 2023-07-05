@@ -2,13 +2,16 @@ package InnoRocket.View;
 
 import InnoRocket.Controller.*;
 import InnoRocket.DAO.*;
+import InnoRocket.Form.RelatorioCidadeForm;
+import InnoRocket.Form.RelatorioContatoForm;
+import InnoRocket.Form.RelatorioEspecializacaoForm;
 import InnoRocket.Form.RelatorioUfForm;
 
 import javax.swing.*;
 
 public class MenuView {
 
-    public  static void sincronizarBanco(){
+    public static void sincronizarBanco() {
         AtividadeDAO.listar();
         CentroDAO.listar();
         CidadeDAO.listar();
@@ -17,7 +20,8 @@ public class MenuView {
         FotoDAO.listar();
         UfDAO.listar();
     }
-    public static void chamaMenuPrincipal(){
+
+    public static void chamaMenuPrincipal() {
         try {
             String[] opcoesMenu = {"Cadastros", "Processos", "Relatorios", "Sair"};
             int opcao = JOptionPane.showOptionDialog(null, "Escolha uma opção: ",
@@ -34,12 +38,12 @@ public class MenuView {
                     listBoxRelatorios();
                     break;
                 case 3: //Sair
-                    int opcaoSair = JOptionPane.showOptionDialog(null," Deseja realmente sair ? ",
-                            "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
+                    int opcaoSair = JOptionPane.showOptionDialog(null, " Deseja realmente sair ? ",
+                            "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
 
-                    if (opcaoSair == JOptionPane.YES_NO_OPTION){
+                    if (opcaoSair == JOptionPane.YES_NO_OPTION) {
                         System.exit(0);
-                    }else {
+                    } else {
                         chamaMenuPrincipal();
                     }
             }
@@ -47,6 +51,7 @@ public class MenuView {
             JOptionPane.showMessageDialog(null, "Erro ao chamar o menu principal." + e.getMessage());
         }
     }
+
     public static void listBoxCadastros() {
         try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
@@ -81,16 +86,14 @@ public class MenuView {
                     listBoxCadastros();
             }
         } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null," Deseja realmente cancelar? ",
-                    "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION){
+            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
+                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
                 chamaMenuPrincipal();
-            }else {
+            } else {
                 listBoxCadastros();
             }
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
             chamaMenuPrincipal();
         }
@@ -110,15 +113,15 @@ public class MenuView {
                     menuExcluir();
                     break;
             }
-        }catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null," Deseja realmente cancelar? ",
-                    "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION){
+        } catch (NullPointerException e) {
+            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
+                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
                 chamaMenuPrincipal();
-            }else {
+            } else {
                 listBoxProcessos();
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
             chamaMenuPrincipal();
         }
@@ -127,29 +130,26 @@ public class MenuView {
 
     public static void listBoxRelatorios() {
         try {
-            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
+            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Uf"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o relatório",
                     "Relatórios", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
 
             switch ((String) selection) {
                 case "Atividade":
-
+                    RelatorioAtividadeForm.emitirRelatorio(AtividadeDAO.listar());
                     break;
                 case "Centro":
-//
+                    RelatorioCentroForm.emitirRelatorio(CentroDAO.listar());
                     break;
                 case "Cidade":
-
+                    RelatorioCidadeForm.emitirRelatorio(CidadeDAO.listar());
                     break;
                 case "Contato":
-
+                    RelatorioContatoForm.emitirRelatorio(ContatoDAO.listar());
                     break;
                 case "Especializacao":
-
-                    break;
-                case "Foto":
-
+                    RelatorioEspecializacaoForm.emitirRelatorio(EspecioalizacaoDAO.listar());
                     break;
                 case "Uf":
                     RelatorioUfForm.emitirRelatorio(UfDAO.listar());
@@ -163,7 +163,7 @@ public class MenuView {
         }
     }
 
-    public static void menuAlterar(){
+    public static void menuAlterar() {
         try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
             String initialSelection = (String) selectionValues[0];
@@ -198,20 +198,19 @@ public class MenuView {
             }
 
         } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null," Deseja realmente cancelar? ",
-                    "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION){
+            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
+                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
                 listBoxProcessos();
-            }else {
+            } else {
                 menuAlterar();
             }
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             chamaMenuPrincipal();
         }
     }
-    public static void menuExcluir(){
+
+    public static void menuExcluir() {
         try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
@@ -244,15 +243,14 @@ public class MenuView {
                     listBoxProcessos();
             }
         } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null,"Deseja realmente cancelar-----?",
-                    "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION){
+            int opcaoCancelar = JOptionPane.showOptionDialog(null, "Deseja realmente cancelar-----?",
+                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
                 listBoxProcessos();
-            }else {
+            } else {
                 menuExcluir();
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             chamaMenuPrincipal();
         }
     }
