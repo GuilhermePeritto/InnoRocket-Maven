@@ -96,18 +96,32 @@ public class MenuView {
     }
 
     public static void listBoxProcessos() {
-        Object[] selectionValues = {"Alterar Dados", "Excluir Cadastro"};
-        String initialSelection = (String) selectionValues[0];
-        Object selection = JOptionPane.showInputDialog(null, "Selecione o processo!",
-                "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-        switch ((String) selection) {
-            case "Alterar Dados":
-                menuAlterar();
-                break;
-            case "Excluir Cadastro":
-                menuExcluir();
-                break;
+        try {
+            Object[] selectionValues = {"Alterar Dados", "Excluir Cadastro"};
+            String initialSelection = (String) selectionValues[0];
+            Object selection = JOptionPane.showInputDialog(null, "Selecione o processo!",
+                    "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+            switch ((String) selection) {
+                case "Alterar Dados":
+                    menuAlterar();
+                    break;
+                case "Excluir Cadastro":
+                    menuExcluir();
+                    break;
+            }
+        }catch (NullPointerException e) {
+            int opcaoCancelar = JOptionPane.showOptionDialog(null," Deseja realmente cancelar? ",
+                    "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
+            if (opcaoCancelar == JOptionPane.YES_NO_OPTION){
+                chamaMenuPrincipal();
+            }else {
+                listBoxProcessos();
+            }
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
+            chamaMenuPrincipal();
         }
+
     }
 
     public static void listBoxRelatorios() {
@@ -181,13 +195,24 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
             }
-        } catch (Exception e) {
+
+        } catch (NullPointerException e) {
+            int opcaoCancelar = JOptionPane.showOptionDialog(null," Deseja realmente cancelar? ",
+                    "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
+            if (opcaoCancelar == JOptionPane.YES_NO_OPTION){
+                listBoxProcessos();
+            }else {
+                menuAlterar();
+            }
+        }
+
+        catch (Exception e) {
             chamaMenuPrincipal();
         }
     }
     public static void menuExcluir(){
         try {
-            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
+            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de processo",
                     "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
@@ -211,6 +236,8 @@ public class MenuView {
                 case "Foto":
                     FotoController.excluir();
                     break;
+                case "UF":
+                    UfController.excluirUf();
                 case "Uf":
                     UfController.excluir();
                     break;
@@ -218,7 +245,16 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
             }
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
+            int opcaoCancelar = JOptionPane.showOptionDialog(null,"Deseja realmente cancelar-----?",
+                    "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
+            if (opcaoCancelar == JOptionPane.YES_NO_OPTION){
+                listBoxProcessos();
+            }else {
+                menuExcluir();
+            }
+        }
+        catch (Exception e) {
             chamaMenuPrincipal();
         }
     }
