@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação de um metodo para pré carregar as informações do banco e melhorar o desempenho soncideravelmente eee UMA CORREÇÃO IMPORTANTICIMA">
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação das relações entre tabelas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableAtividade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableCentro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableCidade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableContato.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableEspecializacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableFoto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableUf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ContatoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ContatoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ControController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ControController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ControController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/CentroController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Cidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Cidade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Contato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Contato.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" afterDir="false" />
     </list>
@@ -51,21 +56,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/perit/Documents/Desenvolvimento/InnoRocket-Maven&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/perit/Documents/Desenvolvimento/AlugueSports",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Guilherme.peritto\IdeaProjects\InnoRocket - Maven\src\main\resources" />
@@ -92,7 +97,7 @@
       <workItem from="1688507511393" duration="3958000" />
       <workItem from="1688573951789" duration="456000" />
       <workItem from="1688574417940" duration="1128000" />
-      <workItem from="1688575838315" duration="3595000" />
+      <workItem from="1688575838315" duration="8747000" />
     </task>
     <task id="LOCAL-00001" summary="Criação da base">
       <option name="closed" value="true" />
@@ -126,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688576819841</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Criação das relações entre tabelas">
+      <option name="closed" value="true" />
+      <created>1688579718107</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688579718107</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,50 +163,12 @@
     <MESSAGE value="Criação dos Controllers" />
     <MESSAGE value="Correção importantissima" />
     <MESSAGE value="Criação de um metodo para pré carregar as informações do banco e melhorar o desempenho soncideravelmente eee UMA CORREÇÃO IMPORTANTICIMA" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação de um metodo para pré carregar as informações do banco e melhorar o desempenho soncideravelmente eee UMA CORREÇÃO IMPORTANTICIMA" />
+    <MESSAGE value="Criação das relações entre tabelas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação das relações entre tabelas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
-          <line>11</line>
-          <properties class="InnoRocket.Controller.AtividadeController" method="cadastrar">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
           <line>16</line>

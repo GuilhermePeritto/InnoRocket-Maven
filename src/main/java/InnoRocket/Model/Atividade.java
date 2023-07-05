@@ -13,11 +13,6 @@ public class Atividade implements Serializable {
 
     public String nome;
     public String descricao;
-    @ManyToMany
-    @JoinTable(name = "CentroAtividade",
-            joinColumns = @JoinColumn(name = "AtividadeId"),
-            inverseJoinColumns = @JoinColumn(name = "CentroId"))
-    public List<Centro> centro;
 
     public Atividade(Integer atividadeId, String nome, String descricao) {
         this.atividadeId = atividadeId;

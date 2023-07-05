@@ -23,21 +23,25 @@ public class Centro implements Serializable {
     public Cidade cidade;
     public EnumStatusCentro status;
     public String redesSociais;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "fotoId", referencedColumnName = "fotoId", nullable = false)
     public Foto foto;
     public LocalDate dataCadastro;
     public LocalDate dataCriacao;
 
-    //Estes ultimos nao tenho certeza por conta da tabela relacionamento!!!
-    @ManyToMany(mappedBy = "centros")
+   @ManyToMany
+    @JoinTable(name = "centroEspecializacao",
+              joinColumns = @JoinColumn(name = "centroId"),
+              inverseJoinColumns = @JoinColumn(name = "especializacaoId"))
     public List<Especializacao> especializacao;
-    @OneToOne(mappedBy = "centro")
+    @OneToOne
+    @JoinColumn(name = "contatoId", referencedColumnName = "contatoId", nullable = false)
     public Contato contato;
-    @ManyToMany(mappedBy = "centro")
+    @ManyToMany
+    @JoinTable(name = "centroAtividade",
+              joinColumns = @JoinColumn(name = "centroId"),
+              inverseJoinColumns = @JoinColumn(name = "atividadeId"))
     public List<Atividade> atividade;
-
-
     public Centro(Integer centroId, String nome, String rua, String cep, String numero, String bairro, String complemento, Cidade cidade, EnumStatusCentro status, String redesSociais, Foto foto, LocalDate dataCadastro, LocalDate dataCriacao, List<Especializacao> especializacao, Contato contato, List<Atividade> atividade) {
         CentroId = centroId;
         this.nome = nome;
@@ -55,6 +59,10 @@ public class Centro implements Serializable {
         this.especializacao = especializacao;
         this.contato = contato;
         this.atividade = atividade;
+    }
+
+    public Centro() {
+
     }
 
     public Integer getCentroId() {

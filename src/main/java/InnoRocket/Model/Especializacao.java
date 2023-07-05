@@ -12,11 +12,6 @@ public class Especializacao implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer EspecializacaoId;
     public String nome;
-    @ManyToMany
-    @JoinTable(name = "CentroEspecializacao",
-            joinColumns = @JoinColumn(name = "EspecializacaoId"),
-            inverseJoinColumns = @JoinColumn(name = "CentroId"))
-    public List<Centro> centros;
 
     public Especializacao(Integer especializacaoId, String nome) {
         EspecializacaoId = especializacaoId;
@@ -47,7 +42,7 @@ public class Especializacao implements Serializable {
     public String toString() {
         return "Especializacao{" +
                 "EspecializacaoId=" + EspecializacaoId +
-                ", descricao='" + nome + '\'' +
+                ", nome='" + nome + '\'' +
                 '}';
     }
 }

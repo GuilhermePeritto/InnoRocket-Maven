@@ -10,7 +10,7 @@ import java.util.List;
 
 import static InnoRocket.View.MenuView.chamaMenuPrincipal;
 
-public class ControController {
+public class CentroController {
     public static void cadastrar() throws ClassNotFoundException {
         String nome = JOptionPane.showInputDialog("Digite o nome do Centro: ");
         String rua = JOptionPane.showInputDialog("Digite o nome da rua: ");

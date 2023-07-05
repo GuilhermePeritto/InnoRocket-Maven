@@ -14,16 +14,11 @@ public class Contato implements Serializable {
     public String nome;
     public String telefone;
     public String email;
-    @OneToOne
-    @JoinColumn(name = "CentroId")
-    public Centro centro;
-
-    public Contato(Integer contatoId, String nome, String telefone, String email, Centro centro) {
+    public Contato(Integer contatoId, String nome, String telefone, String email) {
         ContatoId = contatoId;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
-        this.centro = centro;
     }
 
     public Contato() {
@@ -62,14 +57,6 @@ public class Contato implements Serializable {
         this.email = email;
     }
 
-    public Centro getCentro() {
-        return centro;
-    }
-
-    public void setCentro(Centro centro) {
-        this.centro = centro;
-    }
-
     @Override
     public String toString() {
         return "Contato{" +
@@ -77,7 +64,6 @@ public class Contato implements Serializable {
                 ", nome='" + nome + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", email='" + email + '\'' +
-                ", centro=" + centro +
                 '}';
     }
 }
