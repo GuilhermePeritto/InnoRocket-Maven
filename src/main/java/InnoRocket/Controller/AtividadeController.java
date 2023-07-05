@@ -24,7 +24,7 @@ public class AtividadeController {
     }
 
     public static void alterar() {
-        Object[] selectionValues = AtividadeDAO.listarPorNome();
+        Object[] selectionValues = AtividadeDAO.listaPorNome();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a atividade!",
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
@@ -45,7 +45,7 @@ public class AtividadeController {
     }
 
     public static void excluir() {
-        Object[] selectionValues = AtividadeDAO.listarPorNome();
+        Object[] selectionValues = AtividadeDAO.listaPorNome();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a atividade!",
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);

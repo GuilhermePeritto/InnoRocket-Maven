@@ -32,6 +32,25 @@ public class Centro implements Serializable {
     public Atividade atividade;
 
 
+    public Centro(Integer centroId, String nome, String rua, String cep, String numero, String bairro, String complemento, Cidade cidade, EnumStatusCentro status, String redesSociais, Foto foto, LocalDate dataCadastro, LocalDate dataCriacao, Especializacao especializacao, Contato contato, Atividade atividade) {
+        CentroId = centroId;
+        this.nome = nome;
+        this.rua = rua;
+        this.cep = cep;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.complemento = complemento;
+        this.cidade = cidade;
+        this.status = status;
+        this.redesSociais = redesSociais;
+        this.foto = foto;
+        this.dataCadastro = dataCadastro;
+        this.dataCriacao = dataCriacao;
+        this.especializacao = especializacao;
+        this.contato = contato;
+        this.atividade = atividade;
+    }
+
     public Integer getCentroId() {
         return CentroId;
     }

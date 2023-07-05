@@ -33,7 +33,7 @@ public class CidadeController {
         List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
         String nome = JOptionPane.showInputDialog("Digite o nome do Contato: ", cidade.get(0).getNome());
         Object[] selectionValues1 = UfDAO.listarPorSigla();
-        String initialSelection1 = (String) selectionValues[0];
+        String initialSelection1 = (String) selectionValues1[0];
         Object selection1 = JOptionPane.showInputDialog(null, "Selecione a UF!",
                 "Listar Uf", JOptionPane.QUESTION_MESSAGE, null, selectionValues1, initialSelection1);
         List<Uf> uf = UfDAO.buscaPorSigla((String) selection1);

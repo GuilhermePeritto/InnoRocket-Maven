@@ -32,7 +32,7 @@ public class AtividadeDAO {
         return ufs;
     }
 
-    public static Object[] listarPorNome() {
+    public static Object[] listaPorNome() {
         List<Atividade> atividades = listar();
         List<String> atividadeNome = new ArrayList<>();
 
