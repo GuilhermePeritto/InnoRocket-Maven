@@ -1,11 +1,21 @@
 package InnoRocket.View;
 
 import InnoRocket.Controller.*;
-import InnoRocket.DAO.EspecioalizacaoDAO;
+import InnoRocket.DAO.*;
 
 import javax.swing.*;
 
 public class MenuView {
+
+    public  static void sincronizarBanco(){
+        AtividadeDAO.listar();
+        CentroDAO.listar();
+        CidadeDAO.listar();
+        ContatoDAO.listar();
+        EspecioalizacaoDAO.listar();
+        FotoDAO.listar();
+        UfDAO.listar();
+    }
     public static void chamaMenuPrincipal(){
         try {
             String[] opcoesMenu = {"Cadastros", "Processos", "Relatorios", "Sair"};
