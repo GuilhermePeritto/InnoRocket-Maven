@@ -7,9 +7,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class AtividadeDAO {
+
+
     public static void salvar (Atividade atividade) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
@@ -51,6 +54,28 @@ public class AtividadeDAO {
             }
         }
         return atividadesFiltradas;
+    }
+
+    public static List<Atividade> buscaPorData(Date data) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<Atividade> query = em.createQuery("SELECT atividade FROM Atividade atividade WHERE atividade.data = :data", Atividade.class);
+        query.setParameter("data", data);
+        List<Atividade> atividades = query.getResultList();
+        em.close();
+        emf.close();
+        return atividades;
+    }
+
+    public static List<Atividade> buscaPorStatus(String status) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<Atividade> query = em.createQuery("SELECT atividade FROM Atividade atividade WHERE atividade.status = :status", Atividade.class);
+        query.setParameter("status", status);
+        List<Atividade> atividades = query.getResultList();
+        em.close();
+        emf.close();
+        return atividades;
     }
 
     public static void alterar(Atividade atividade) {
