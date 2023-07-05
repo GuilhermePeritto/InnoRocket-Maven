@@ -1,5 +1,4 @@
 package InnoRocket.Controller;
-
 import InnoRocket.DAO.*;
 import InnoRocket.Model.Uf;
 import javax.swing.*;
@@ -61,9 +60,7 @@ public class UfController {
                     "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
             if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
                 menuExcluir();
-            } /*else {
-
-            }*/
+            }
         } catch (Exception e) {
             chamaMenuPrincipal();
         }

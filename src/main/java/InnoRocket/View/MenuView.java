@@ -237,10 +237,7 @@ public class MenuView {
                     FotoController.excluir();
                     break;
                 case "UF":
-                    UfController.excluirUf();
-                case "Uf":
                     UfController.excluir();
-                    break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
