@@ -2,10 +2,7 @@ package InnoRocket.View;
 
 import InnoRocket.Controller.*;
 import InnoRocket.DAO.*;
-import InnoRocket.Form.RelatorioCidadeForm;
-import InnoRocket.Form.RelatorioContatoForm;
-import InnoRocket.Form.RelatorioEspecializacaoForm;
-import InnoRocket.Form.RelatorioUfForm;
+import InnoRocket.Form.*;
 
 import javax.swing.*;
 

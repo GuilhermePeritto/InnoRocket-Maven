@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="commit de criação dos relatorios">
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioCidadeForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioContatoForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioEspecializacaoForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioAtividadeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioAtividadeForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +140,23 @@
       <option name="project" value="LOCAL" />
       <updated>1688596395041</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit de criação dos relatorios">
+      <option name="closed" value="true" />
+      <created>1688597604106</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688597604106</updated>
+    </task>
+    <task id="LOCAL-00008" summary="commit de criação dos relatorios">
+      <option name="closed" value="true" />
+      <created>1688597702959</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688597702959</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
