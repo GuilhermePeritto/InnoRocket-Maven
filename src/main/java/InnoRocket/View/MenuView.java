@@ -165,7 +165,7 @@ public class MenuView {
 
     public static void menuAlterar(){
         try {
-            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
+            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de processo",
                     "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
@@ -189,7 +189,7 @@ public class MenuView {
                 case "Foto":
                     FotoController.alterar();
                     break;
-                case "Uf":
+                case "UF":
                     UfController.alterar();
                     break;
                 default:
@@ -244,7 +244,7 @@ public class MenuView {
                     listBoxProcessos();
             }
         } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null,"Deseja realmente cancelar-----?",
+            int opcaoCancelar = JOptionPane.showOptionDialog(null,"Deseja realmente cancelar?",
                     "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,null,null);
             if (opcaoCancelar == JOptionPane.YES_NO_OPTION){
                 listBoxProcessos();
