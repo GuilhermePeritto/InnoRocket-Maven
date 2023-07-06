@@ -86,7 +86,6 @@ public class MenuView {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
         }
-
     }
 
     public static void listBoxRelatorios() {
