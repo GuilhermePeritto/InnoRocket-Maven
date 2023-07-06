@@ -91,7 +91,7 @@ public class MenuView {
 
     public static void listBoxRelatorios() {
         try {
-            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Uf"};
+            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Uf", "Personalizado", "Personalizado-Centro"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o relatório",
                     "Relatórios", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
@@ -114,6 +114,12 @@ public class MenuView {
                     break;
                 case "Uf":
                     RelatorioUfForm.emitirRelatorio(UfDAO.listar());
+                    break;
+                case "Personalizado":
+                    RelatorioPersonalizadoForm.emitirRelatorio();
+                    break;
+                case "Personalizado-Centro":
+                    RelatorioPersonalizadoDoisForm.emitirRelatorio();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
