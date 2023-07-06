@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.util.List;
 
 public class AtividadeController {
-    public static void cadastrar() throws ClassNotFoundException {
+    public static void cadastrar() throws ''''ClassNotFoundException {
         String nome = JOptionPane.showInputDialog("Digite o nome da atividade: ");
         String descricao = JOptionPane.showInputDialog("Digite a descrição da atividade: ");
 
