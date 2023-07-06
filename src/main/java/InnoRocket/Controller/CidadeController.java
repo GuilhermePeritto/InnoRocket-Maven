@@ -9,10 +9,11 @@ import InnoRocket.Model.Uf;
 
 import javax.swing.*;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class CidadeController {
     public static void cadastrar() throws ClassNotFoundException {
-        String nome = JOptionPane.showInputDialog("Digite o nome da cidade: ");
+        String nome = getValidNome(null);
         Object[] selectionValues = UfDAO.listarPorSigla();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a UF!",
@@ -28,7 +29,7 @@ public class CidadeController {
         Object selection = JOptionPane.showInputDialog(null, "Selecione a cidade!",
                 "lista de Cidades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
-        String nome = JOptionPane.showInputDialog("Digite o nome do Contato: ", cidade.get(0).getNome());
+        String nome =getValidNome(null);
         Object[] selectionValues1 = UfDAO.listarPorSigla();
         String initialSelection1 = (String) selectionValues1[0];
         Object selection1 = JOptionPane.showInputDialog(null, "Selecione a UF!",
@@ -45,5 +46,25 @@ public class CidadeController {
                 "lista de Cidades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
         CidadeDAO.excluir(cidade.get(0));
+    }
+
+    private static String getValidNome(String nome) {
+        do {
+            nome = JOptionPane.showInputDialog("Digite a nome da Cidade ");
+            if (nome == null) {
+                return null;
+            }
+            if (nome.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "O nome não pode ser vazio. Por favor, digite um nome válido.");
+            } else if (containsSpecialCharacters(nome)) {
+                JOptionPane.showMessageDialog(null, "O nome não pode conter caracteres especiais. Por favor, digite um nome válido.");
+            }
+        } while (nome.isEmpty() || containsSpecialCharacters(nome));
+        return nome;
+    }
+
+    private static boolean containsSpecialCharacters(String text) {
+        Pattern specialChars = Pattern.compile("[^a-zA-Z0-9]");
+        return specialChars.matcher(text).find();
     }
 }
