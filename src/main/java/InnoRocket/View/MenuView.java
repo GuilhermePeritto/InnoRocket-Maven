@@ -91,7 +91,7 @@ public class MenuView {
 
     public static void listBoxRelatorios() {
         try {
-            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Uf", "Personalizado", "Personalizado-Centro"};
+            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Uf"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o relatório",
                     "Relatórios", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
@@ -101,7 +101,7 @@ public class MenuView {
                     RelatorioAtividadeForm.emitirRelatorio(AtividadeDAO.listar());
                     break;
                 case "Centro":
-                    RelatorioCentroForm.emitirRelatorio(CentroDAO.listar());
+                    listBoxRelatorioCentro();
                     break;
                 case "Cidade":
                     RelatorioCidadeForm.emitirRelatorio(CidadeDAO.listar());
@@ -114,12 +114,6 @@ public class MenuView {
                     break;
                 case "Uf":
                     RelatorioUfForm.emitirRelatorio(UfDAO.listar());
-                    break;
-                case "Centro Por Cidade":
-                    RelatorioCentroPorCidadeForm.emitirRelatorio(CentroDAO.listarCentroPorCidade());
-                    break;
-                case "Centro Por Especializacao":
-                    RelatorioCentroPorEspecializacaoForm.emitirRelatorio(CentroDAO.listarCentroPorEspecializacao());
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
@@ -142,7 +136,7 @@ public class MenuView {
                     AtividadeController.alterar();
                     break;
                 case "Centro":
-//                    CentroController.alterar();
+                    CentroController.alterar();
                     break;
                 case "Cidade":
                     CidadeController.alterar();
@@ -189,7 +183,7 @@ public class MenuView {
                     AtividadeController.excluir();
                     break;
                 case "Centro":
-
+                    CentroController.excluir();
                     break;
                 case "Cidade":
                     CidadeController.excluir();
@@ -219,6 +213,27 @@ public class MenuView {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de exclusão." + e.getMessage());
+        }
+    }
+    public static void listBoxRelatorioCentro(){
+        Object[] selectionValues = {"Centro", "Centro Por Especializacao", "Centro Por Cidade"};
+        String initialSelection = (String) selectionValues[0];
+        Object selection = JOptionPane.showInputDialog(null, "Selecione o relatório",
+                "Relatórios", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+
+        switch ((String) selection) {
+            case "Centro":
+                RelatorioCentroForm.emitirRelatorio(CentroDAO.listar());
+                break;
+            case "Centro Por Especializacao":
+                RelatorioCentroPorEspecializacaoForm.emitirRelatorio(CentroDAO.listarCentroPorEspecializacao());
+                break;
+            case "Centro Por Cidade":
+                RelatorioCentroPorCidadeForm.emitirRelatorio(CentroDAO.listarCentroPorCidade());
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
+                listBoxProcessos();
         }
     }
 }
