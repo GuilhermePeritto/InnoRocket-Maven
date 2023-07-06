@@ -1,5 +1,7 @@
 package InnoRocket.Model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;

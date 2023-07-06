@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 
-public class EspecializacaoController {
+public class EspecializacaoController extends Validacoes{
     public static void cadastrar() throws ClassNotFoundException {
         String nome = getValidNome(null);
         Especializacao especializacao = new Especializacao(null, nome);

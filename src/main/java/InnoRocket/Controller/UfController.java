@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.util.List;
 import static InnoRocket.View.MenuView.menuExcluir;
 
-public class UfController {
+public class UfController extends Validacoes{
     public static void cadastrar() throws ClassNotFoundException {
         String sigla = JOptionPane.showInputDialog("Digite a sigla da uf: ");
         if (sigla.length() > 2){

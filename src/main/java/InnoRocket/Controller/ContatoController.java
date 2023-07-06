@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 
-public class ContatoController {
+public class ContatoController extends Validacoes{
     public static void cadastrar() throws ClassNotFoundException {
         String nome = getValidNome(null);
         String telefone = getValidTelefone(null);

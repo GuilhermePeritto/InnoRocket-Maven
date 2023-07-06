@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class CentroController {
+public class CentroController extends Validacoes{
     public static void cadastrar() throws ClassNotFoundException {
         String nome = JOptionPane.showInputDialog("Digite o nome do Centro: ");
         String rua = JOptionPane.showInputDialog("Digite o nome da rua: ");

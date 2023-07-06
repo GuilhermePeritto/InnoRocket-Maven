@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class CidadeController {
+public class CidadeController extends Validacoes{
     public static void cadastrar() throws ClassNotFoundException {
         String nome = getValidNome(null);
         Object[] selectionValues = UfDAO.listarPorSigla();

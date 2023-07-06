@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação das relações entre tabelas">
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableAtividade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableCentro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableCidade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableContato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableEspecializacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableFoto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Relatorio/TableUf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/ControController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/CentroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Contato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Contato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Especializacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,21 +48,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/perit/Documents/Desenvolvimento/AlugueSports",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/perit/Documents/Desenvolvimento/AlugueSports&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Guilherme.peritto\IdeaProjects\InnoRocket - Maven\src\main\resources" />

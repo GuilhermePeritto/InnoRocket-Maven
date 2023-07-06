@@ -1,11 +1,10 @@
 package InnoRocket.Controller;
-
 import InnoRocket.DAO.AtividadeDAO;
 import InnoRocket.Model.Atividade;
 import javax.swing.*;
 import java.util.List;
 
-public class AtividadeController {
+public class AtividadeController extends Validacoes{
     public static void cadastrar() throws ClassNotFoundException {
         String nome = JOptionPane.showInputDialog("Digite o nome da atividade: ");
         String descricao = JOptionPane.showInputDialog("Digite a descrição da atividade: ");

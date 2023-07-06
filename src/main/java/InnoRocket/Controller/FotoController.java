@@ -5,7 +5,7 @@ import InnoRocket.Model.Foto;
 import javax.swing.*;
 import java.util.List;
 
-public class FotoController {
+public class FotoController extends Validacoes{
     public static void cadastrar() throws ClassNotFoundException {
         String url = JOptionPane.showInputDialog("Digite a url da foto: ");
         Foto foto = new Foto(null, url);
