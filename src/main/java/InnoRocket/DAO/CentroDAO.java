@@ -1,7 +1,8 @@
 package InnoRocket.DAO;
 
 import InnoRocket.Model.Centro;
-import InnoRocket.Model.Foto;
+import InnoRocket.Model.CentroPorCidade;
+import InnoRocket.Model.CentroPorEspecializacao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -33,6 +34,40 @@ public class CentroDAO {
         emf.close();
 
         return centros;
+    }
+
+    public static List<CentroPorEspecializacao> listarCentroPorEspecializacao() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<CentroPorEspecializacao> query = em.createQuery("select e.Descricao Especializacao, count(*) QuantidadeCentro\n" +
+                "from centro c\n" +
+                "join centroespecializacao ce\n" +
+                "    on c.CentroId = ce.CentroId\n" +
+                "join especializacao e\n" +
+                "    on e.EspecializacaoId = ce.EspecializacaoId\n" +
+                "group by ce.EspecializacaoId", CentroPorEspecializacao.class);
+        List<CentroPorEspecializacao> CentroPorEspecializacao = query.getResultList();
+
+        em.close();
+        emf.close();
+
+        return CentroPorEspecializacao;
+    }
+
+    public static List<CentroPorCidade> listarCentroPorCidade() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<CentroPorCidade> query = em.createQuery("select  cid.cidade Cidade, count(cid.CidadeId) QuantidadeCentro\n" +
+                "from cidade cid\n" +
+                "join centro c\n" +
+                "    on c.CidadeId = cid.CidadeId\n" +
+                "group by cid.cidade", CentroPorCidade.class);
+        List<CentroPorCidade> centroPorCidades = query.getResultList();
+
+        em.close();
+        emf.close();
+
+        return centroPorCidades;
     }
 
     public static Object[] listaPorNomes() {

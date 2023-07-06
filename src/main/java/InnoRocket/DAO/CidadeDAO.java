@@ -1,6 +1,7 @@
 package InnoRocket.DAO;
 
 import InnoRocket.Model.Centro;
+import InnoRocket.Model.CentroPorCidade;
 import InnoRocket.Model.Cidade;
 
 import javax.persistence.EntityManager;
@@ -34,6 +35,7 @@ public class CidadeDAO {
 
         return cidades;
     }
+
 
     public static Object[] listaPorNomes() {
         List<Cidade> cidades = listar();

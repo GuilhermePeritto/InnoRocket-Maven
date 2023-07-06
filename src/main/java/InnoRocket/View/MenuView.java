@@ -115,11 +115,11 @@ public class MenuView {
                 case "Uf":
                     RelatorioUfForm.emitirRelatorio(UfDAO.listar());
                     break;
-                case "Personalizado":
-                    RelatorioPersonalizadoForm.emitirRelatorio();
+                case "Centro Por Cidade":
+                    RelatorioCentroPorCidadeForm.emitirRelatorio(CentroDAO.listarCentroPorCidade());
                     break;
-                case "Personalizado-Centro":
-                    RelatorioPersonalizadoDoisForm.emitirRelatorio();
+                case "Centro Por Especializacao":
+                    RelatorioCentroPorEspecializacaoForm.emitirRelatorio(CentroDAO.listarCentroPorEspecializacao());
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
