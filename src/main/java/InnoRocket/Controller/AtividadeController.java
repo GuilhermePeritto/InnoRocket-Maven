@@ -6,8 +6,8 @@ import java.util.List;
 
 public class AtividadeController extends Validacoes{
     public static void cadastrar() throws ClassNotFoundException {
-        String nome = JOptionPane.showInputDialog("Digite o nome da atividade: ");
-        String descricao = JOptionPane.showInputDialog("Digite a descrição da atividade: ");
+        String nome = getValidNome(null);
+        String descricao = getValidNome(null);
 
         Atividade atividade = new Atividade(null, nome, descricao);
 
@@ -21,8 +21,8 @@ public class AtividadeController extends Validacoes{
         Object selection = JOptionPane.showInputDialog(null, "Selecione a atividade!",
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Atividade> atividades = AtividadeDAO.buscaPorNome((String) selection);
-        String nome = JOptionPane.showInputDialog("Digite o nome da atividade: ", atividades.get(0).getNome());
-        String descricao = JOptionPane.showInputDialog("Digite a descrição da atividade: ", atividades.get(0).getDescricao());
+        String nome =getValidNome(null);
+        String descricao = getValidNome(null);
         Atividade atividadeAlterar = new Atividade(atividades.get(0).getAtividadeId(), nome, descricao);
         AtividadeDAO.alterar(atividadeAlterar);
         System.out.println("Atividade alterada com sucesso!");

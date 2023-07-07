@@ -216,20 +216,23 @@ public class MenuView {
         }
     }
     public static void listBoxRelatorioCentro(){
-        Object[] selectionValues = {"Centro", "Centro Por Especializacao", "Centro Por Cidade"};
-        String initialSelection = (String) selectionValues[0];
-        Object selection = JOptionPane.showInputDialog(null, "Selecione o relatório",
-                "Relatórios", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+        String[] opcoesMenuProcesso = {"Centro", "Centro Por Especializacao", "Centro Por Cidade", "Voltar"};
+        int menu_processos = JOptionPane.showOptionDialog(null, "Escolha uma opção:",
+                "Menu Relatórios",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesMenuProcesso, opcoesMenuProcesso[0]);
 
-        switch ((String) selection) {
-            case "Centro":
+        switch (menu_processos) {
+            case 0:// "Centro":
                 RelatorioCentroForm.emitirRelatorio(CentroDAO.listar());
                 break;
-            case "Centro Por Especializacao":
+            case 1:// "Centro Por Especializacao":
                 RelatorioCentroPorEspecializacaoForm.emitirRelatorio(CentroDAO.listarCentroPorEspecializacao());
                 break;
-            case "Centro Por Cidade":
+            case 2: //"Centro Por Cidade":
                 RelatorioCentroPorCidadeForm.emitirRelatorio(CentroDAO.listarCentroPorCidade());
+                break;
+            case 3: //"voltar":
+                listBoxRelatorios();
                 break;
             default:
                 JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");

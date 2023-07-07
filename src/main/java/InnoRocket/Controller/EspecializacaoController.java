@@ -35,24 +35,4 @@ public class EspecializacaoController extends Validacoes{
         List<Especializacao> especializacao = EspecioalizacaoDAO.buscaPorNome((String) selection);
         EspecioalizacaoDAO.excluir(especializacao.get(0));
     }
-
-    private static String getValidNome(String nome) {
-        do {
-            nome = JOptionPane.showInputDialog("Digite a nome da Especializacao ");
-            if (nome == null) {
-                return null;
-            }
-            if (nome.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "O nome não pode ser vazio. Por favor, digite um nome válido.");
-            } else if (containsSpecialCharacters(nome)) {
-                JOptionPane.showMessageDialog(null, "O nome não pode conter caracteres especiais. Por favor, digite um nome válido.");
-            }
-        } while (nome.isEmpty() || containsSpecialCharacters(nome));
-        return nome;
-    }
-
-    private static boolean containsSpecialCharacters(String text) {
-        Pattern specialChars = Pattern.compile("[^a-zA-Z0-9]");
-        return specialChars.matcher(text).find();
-    }
 }
