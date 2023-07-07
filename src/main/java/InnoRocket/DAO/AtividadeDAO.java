@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,11 +17,10 @@ public class AtividadeDAO {
     public static void salvar (Atividade atividade) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-
         em.getTransaction().begin();
         em.persist(atividade);
         em.getTransaction().commit();
-        System.out.println("Atividade salva com sucesso!");
+        JOptionPane.showMessageDialog(null, "Cadastro criado com sucesso!");
         em.close();
         emf.close();
     }

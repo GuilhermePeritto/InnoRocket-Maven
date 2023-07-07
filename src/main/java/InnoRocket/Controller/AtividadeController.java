@@ -7,12 +7,11 @@ import java.util.List;
 public class AtividadeController extends Validacoes{
     public static void cadastrar() throws ClassNotFoundException {
         String nome = getValidNome(null);
-        String descricao = getValidNome(null);
+        String descricao = getValidDescricao(null);
 
         Atividade atividade = new Atividade(null, nome, descricao);
 
         AtividadeDAO.salvar(atividade);
-        System.out.println("Atividade cadastrada com sucesso!");
     }
 
     public static void alterar() {

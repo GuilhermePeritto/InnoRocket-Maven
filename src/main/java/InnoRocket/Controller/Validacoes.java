@@ -19,6 +19,15 @@ public class Validacoes {
         } while (nome.trim().isEmpty() || containsSpecialCharacters(nome));
         return nome;
     }
+
+    public static String getValidDescricao(String descricao) {
+
+            descricao = JOptionPane.showInputDialog("Informe a descrição: ");
+            if (descricao == null) {
+                return null;
+            }
+        return descricao;
+    }
     public static String getValidTelefone(String telefone) {
         do {
             telefone = JOptionPane.showInputDialog("Digite o telefone do Contato: ");
