@@ -118,7 +118,15 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
             }
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
+            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
+                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
+            } else {
+                listBoxRelatorios();
+            }
+        }
+        catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
         }
     }
