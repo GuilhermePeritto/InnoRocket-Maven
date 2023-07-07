@@ -48,7 +48,11 @@ public class MenuFrame extends JFrame {
         cadastrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                listBoxCadastros();
+                try {
+                    listBoxCadastros();
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
