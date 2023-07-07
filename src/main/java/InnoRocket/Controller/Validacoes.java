@@ -13,10 +13,10 @@ public class Validacoes {
             }
             if (nome.trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "O nome não pode ser vazio. Por favor, digite um nome válido.");
-            } else if (containsSpecialCharacters(nome)) {
+            } /*else if (containsSpecialCharacters(nome)) {
                 JOptionPane.showMessageDialog(null, "O nome não pode conter caracteres especiais. Por favor, digite um nome válido.");
-            }
-        } while (nome.trim().isEmpty() || containsSpecialCharacters(nome));
+            }*/
+        } while (nome.trim().isEmpty() /*|| containsSpecialCharacters(nome)*/);
         return nome;
     }
 

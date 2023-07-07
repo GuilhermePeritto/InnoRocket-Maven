@@ -2,10 +2,7 @@ package InnoRocket.DAO;
 
 import InnoRocket.Model.Atividade;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,8 +25,10 @@ public class AtividadeDAO {
     public static List<Atividade> listar() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-        TypedQuery<Atividade> query = em.createQuery("SELECT atividade FROM Atividade atividade", Atividade.class);
-        List<Atividade> atividades = query.getResultList();
+        //TypedQuery<Atividade> query = em.createQuery("SELECT atividade FROM Atividade atividade", Atividade.class);
+        //List<Atividade> atividades = query.getResultList();
+        Query query = em.createQuery("SELECT nome FROM Atividade atividade");
+        List<Atividade> atividades = (List<Atividade>)query.getResultList();
         em.close();
         emf.close();
         return atividades;
