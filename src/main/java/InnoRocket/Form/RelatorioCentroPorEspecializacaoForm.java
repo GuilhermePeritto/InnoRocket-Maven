@@ -16,7 +16,7 @@ public class RelatorioCentroPorEspecializacaoForm extends JPanel {
     private static final long serialVersionUID = 1L;
 
     public static final String[] nomeColunas =
-            {"Especializacao", "Quant Centro", ""};
+            {"Especialização", "Quantidade Centro", ""};
 
     protected JTable table;
     protected JScrollPane scroller;
@@ -45,7 +45,7 @@ public class RelatorioCentroPorEspecializacaoForm extends JPanel {
     public static void emitirRelatorio(List<CentroPorEspecializacao> centroPorEspecializacaos){
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-            JFrame frame = new JFrame("Relatorio - Centro por Especializacao");
+            JFrame frame = new JFrame("Relatorio - Centro por Especialização");
 
             frame.addWindowListener(new WindowAdapter() {
                 public void windowClosing(WindowEvent evt) {

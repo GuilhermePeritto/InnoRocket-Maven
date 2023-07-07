@@ -18,7 +18,7 @@ public class RelatorioCentroPorCidadeForm extends JPanel {
     private static final long serialVersionUID = 1L;
 
     public static final String[] nomeColunas =
-            {"Cidade", "Quant Centro", ""};
+            {"Cidade", "Quantidade Centro", ""};
 
     protected JTable table;
     protected JScrollPane scroller;

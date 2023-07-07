@@ -37,13 +37,13 @@ public class MenuView {
                 case "Contato":
                     ContatoController.cadastrar();
                     break;
-                case "Especializacao":
+                case "Especialização":
                     EspecializacaoController.cadastrar();
                     break;
                 case "Foto":
                     FotoController.cadastrar();
                     break;
-                case "Uf":
+                case "UF":
                     UfController.cadastrar();
                     break;
                 default:
@@ -90,7 +90,7 @@ public class MenuView {
 
     public static void listBoxRelatorios() {
         try {
-            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Uf"};
+            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especialização", "UF"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o relatório",
                     "Relatórios", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
@@ -108,10 +108,10 @@ public class MenuView {
                 case "Contato":
                     RelatorioContatoForm.emitirRelatorio(ContatoDAO.listar());
                     break;
-                case "Especializacao":
+                case "Especialização":
                     RelatorioEspecializacaoForm.emitirRelatorio(EspecioalizacaoDAO.listar());
                     break;
-                case "Uf":
+                case "UF":
                     RelatorioUfForm.emitirRelatorio(UfDAO.listar());
                     break;
                 default:
@@ -125,7 +125,7 @@ public class MenuView {
 
     public static void menuAlterar() {
         try {
-            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "Uf"};
+            Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especialização", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de processo",
                     "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
@@ -143,13 +143,13 @@ public class MenuView {
                 case "Contato":
                     ContatoController.alterar();
                     break;
-                case "Especializacao":
+                case "Especialização":
                     EspecializacaoController.alterar();
                     break;
                 case "Foto":
                     FotoController.alterar();
                     break;
-                case "Uf":
+                case "UF":
                     UfController.alterar();
                     break;
                 default:
@@ -190,7 +190,7 @@ public class MenuView {
                 case "Contato":
                     ContatoController.excluir();
                     break;
-                case "Especializacao":
+                case "Especialização":
                     EspecializacaoController.excluir();
                     break;
                 case "Foto":
@@ -203,7 +203,7 @@ public class MenuView {
                     listBoxProcessos();
             }
         } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null, "Deseja realmente cancelar-----?",
+            int opcaoCancelar = JOptionPane.showOptionDialog(null, "Deseja realmente cancelar?",
                     "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
             if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
                 listBoxProcessos();
@@ -215,16 +215,16 @@ public class MenuView {
         }
     }
     public static void listBoxRelatorioCentro(){
-        String[] opcoesMenuProcesso = {"Centro", "Centro Por Especializacao", "Centro Por Cidade", "Voltar"};
+        String[] opcoesMenuProcesso = {"Centros", "Centro Por Especialização", "Centro Por Cidade", "Voltar"};
         int menu_processos = JOptionPane.showOptionDialog(null, "Escolha uma opção:",
                 "Menu Relatórios",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcoesMenuProcesso, opcoesMenuProcesso[0]);
 
         switch (menu_processos) {
-            case 0:// "Centro":
+            case 0:// "Centros":
                 RelatorioCentroForm.emitirRelatorio(CentroDAO.listar());
                 break;
-            case 1:// "Centro Por Especializacao":
+            case 1:// "Centro Por Especialização":
                 RelatorioCentroPorEspecializacaoForm.emitirRelatorio(CentroDAO.listarCentroPorEspecializacao());
                 break;
             case 2: //"Centro Por Cidade":
