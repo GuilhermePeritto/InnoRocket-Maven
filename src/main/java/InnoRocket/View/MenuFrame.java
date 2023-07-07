@@ -12,6 +12,7 @@ public class MenuFrame extends JFrame {
 
     public MenuFrame() {
         setTitle("InnoRocket");
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(950, 600);
         setLocationRelativeTo(null);
