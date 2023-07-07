@@ -21,7 +21,7 @@ public class AtividadeController extends Validacoes{
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Atividade> atividades = AtividadeDAO.buscaPorNome((String) selection);
         String nome =getValidNome(null);
-        String descricao = getValidNome(null);
+        String descricao = getValidDescricao(null);
         Atividade atividadeAlterar = new Atividade(atividades.get(0).getAtividadeId(), nome, descricao);
         AtividadeDAO.alterar(atividadeAlterar);
         System.out.println("Atividade alterada com sucesso!");
