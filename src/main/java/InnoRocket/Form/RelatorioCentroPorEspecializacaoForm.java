@@ -1,5 +1,6 @@
 package InnoRocket.Form;
 import InnoRocket.Model.CentroPorEspecializacao;
+import InnoRocket.Model.Cidade;
 import InnoRocket.Relatorio.TableCentroPorEspecializacao;
 import javax.swing.*;
 import javax.swing.table.TableColumn;
@@ -62,7 +63,6 @@ public class RelatorioCentroPorEspecializacaoForm extends JPanel {
             for (CentroPorEspecializacao centroPorEspecializacao : centroPorEspecializacaos) {
                 vetorDados.add(centroPorEspecializacao);
             }
-
             frame.getContentPane().add(new RelatorioCentroPorEspecializacaoForm(vetorDados));
             frame.pack();
             frame.setVisible(true);

@@ -21,7 +21,7 @@ public class RelatorioCentroForm extends JPanel {
     private static final long serialVersionUID = 1L;
 
     public static final String[] nomeColunas =
-            {"Id", "Nome", "Rua", "CEP", "Número", "Bairro", "Complemento", "Cidade", "Status", "Redes Sociais", "Foto", "Data de Cadastro", "Data de Criação", ""};
+            {"Nome", "Rua", "CEP", "Número", "Bairro", "Complemento", "Cidade", "Status", "Redes Sociais", "Foto", "Data de Cadastro", "Data de Criação", ""};
 
     protected JTable table;
     protected JScrollPane scroller;

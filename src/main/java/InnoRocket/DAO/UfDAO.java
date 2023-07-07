@@ -17,7 +17,6 @@ public class UfDAO {
         em.getTransaction().begin();
         em.persist(uf);
         em.getTransaction().commit();
-        System.out.println("UF salva com sucesso!");
         em.close();
         emf.close();
     }

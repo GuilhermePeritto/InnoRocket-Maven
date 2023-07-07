@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.swing.*;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +73,7 @@ public class FotoDAO {
         em.getTransaction().begin();
         em.remove(em.merge(foto));
         em.getTransaction().commit();
-        System.out.println("Foto excluída com sucesso!");
+        JOptionPane.showMessageDialog(null, "Foto excluída com sucesso!");
         em.close();
         emf.close();
         } catch (Exception e) {

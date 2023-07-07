@@ -97,7 +97,7 @@ public class AtividadeDAO {
         em.getTransaction().begin();
         em.remove(em.merge(atividade));
         em.getTransaction().commit();
-        System.out.println("Atividade excluída com sucesso!");
+        JOptionPane.showMessageDialog(null, "Atividade excluída com sucesso!");
         em.close();
         emf.close();
         } catch (Exception e) {

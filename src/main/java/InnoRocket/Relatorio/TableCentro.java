@@ -9,20 +9,20 @@ import java.util.Vector;
 public class TableCentro extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
-    public static final int INDEX_ID = 0;
-    public static final int INDEX_NOME = 1;
-    public static final int INDEX_RUA = 2;
-    public static final int INDEX_CEP = 3;
-    public static final int INDEX_NUMERO = 4;
-    public static final int INDEX_BAIRRO = 5;
-    public static final int INDEX_COMPLEMENTO = 6;
-    public static final int INDEX_CIDADE = 7;
-    public static final int INDEX_STATUS = 8;
-    public static final int INDEX_REDESSOCIAIS = 9;
-    public static final int INDEX_FOTO = 10;
-    public static final int INDEX_DATACADASTRO = 11;
-    public static final int INDEX_DATACRIACAO = 12;
-    public static final int INDEX_ESCONDIDO = 13;
+//    public static final int INDEX_ID = 0;
+    public static final int INDEX_NOME = 0;
+    public static final int INDEX_RUA = 1;
+    public static final int INDEX_CEP = 2;
+    public static final int INDEX_NUMERO = 3;
+    public static final int INDEX_BAIRRO = 4;
+    public static final int INDEX_COMPLEMENTO = 5;
+    public static final int INDEX_CIDADE = 6;
+    public static final int INDEX_STATUS = 7;
+    public static final int INDEX_REDESSOCIAIS = 8;
+    public static final int INDEX_FOTO = 9;
+    public static final int INDEX_DATACADASTRO = 10;
+    public static final int INDEX_DATACRIACAO = 11;
+    public static final int INDEX_ESCONDIDO = 12;
 
     protected String[] nomeColunas;
     protected Vector<Centro> vetorDados;
@@ -46,8 +46,8 @@ public class TableCentro extends AbstractTableModel {
     public Object getValueAt(int linha, int coluna) {
         Centro registroCentro = vetorDados.get(linha);
         switch (coluna) {
-            case INDEX_ID:
-                return registroCentro.getCentroId();
+//            case INDEX_ID:
+//                return registroCentro.getCentroId();
             case INDEX_NOME:
                 return registroCentro.getNome();
             case INDEX_RUA:

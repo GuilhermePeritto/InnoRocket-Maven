@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.swing.*;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +72,7 @@ public class EspecioalizacaoDAO {
         em.getTransaction().begin();
         em.remove(em.merge(especializacao));
         em.getTransaction().commit();
-        System.out.println("Especializacao excluída com sucesso!");
+            JOptionPane.showMessageDialog(null, "Especializacao excluída com sucesso!");
         em.close();
         emf.close();
         } catch (Exception e) {

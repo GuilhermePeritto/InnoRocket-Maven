@@ -5,6 +5,7 @@ import InnoRocket.Model.CentroPorCidade;
 import InnoRocket.Model.CentroPorEspecializacao;
 
 import javax.persistence.*;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -109,5 +110,6 @@ public class CentroDAO {
         em.getTransaction().commit();
         em.close();
         emf.close();
+        JOptionPane.showMessageDialog(null, "Centro excluído com sucesso!");
     }
 }

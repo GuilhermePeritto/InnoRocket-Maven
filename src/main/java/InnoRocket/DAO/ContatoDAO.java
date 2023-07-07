@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.swing.*;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
@@ -79,6 +80,7 @@ public class ContatoDAO {
         em.getTransaction().commit();
         em.close();
         emf.close();
+            JOptionPane.showMessageDialog(null, "Cadastro excluído com sucesso!");
         } catch (Exception e) {
             throw new SQLIntegrityConstraintViolationException();
         }

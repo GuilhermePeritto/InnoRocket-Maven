@@ -2,9 +2,9 @@ package InnoRocket.Model;
 
 public class CentroPorEspecializacao {
     public String especializacao;
-    public int quantidadeCentro;
+    public String quantidadeCentro;
 
-    public CentroPorEspecializacao(String especializacao, int quantidadeCentro) {
+    public CentroPorEspecializacao(String especializacao, String quantidadeCentro) {
         this.especializacao = especializacao;
         this.quantidadeCentro = quantidadeCentro;
     }
@@ -17,11 +17,11 @@ public class CentroPorEspecializacao {
         this.especializacao = especializacao;
     }
 
-    public int getQuantidadeCentro() {
+    public String getQuantidadeCentro() {
         return quantidadeCentro;
     }
 
-    public void setQuantidadeCentro(int quantidadeCentro) {
+    public void setQuantidadeCentro(String quantidadeCentro) {
         this.quantidadeCentro = quantidadeCentro;
     }
 
