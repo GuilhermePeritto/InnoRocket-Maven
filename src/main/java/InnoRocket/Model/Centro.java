@@ -1,6 +1,6 @@
 package InnoRocket.Model;
 
-import com.sun.istack.NotNull;
+import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,31 +14,45 @@ public class Centro implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer CentroId;
+    @NotNull
     public String nome;
+    @NotNull
     public String rua;
+    @NotNull
     public String cep;
+    @NotNull
     public String numero;
+    @NotNull
     public String bairro;
+    @NotNull
     public String complemento;
     @ManyToOne
     @JoinColumn(name = "cidadeId", referencedColumnName = "cidadeId", nullable = false)
     public Cidade cidade;
+    @NotNull
     public EnumStatusCentro status;
+    @NotNull
     public String redesSociais;
+    @NotNull
     @OneToOne
     @JoinColumn(name = "fotoId", referencedColumnName = "fotoId", nullable = false)
     public Foto foto;
+    @NotNull
     public LocalDate dataCadastro;
+    @NotNull
     public LocalDate dataCriacao;
+    @NotNull
 
    @ManyToMany
     @JoinTable(name = "centroEspecializacao",
               joinColumns = @JoinColumn(name = "centroId"),
               inverseJoinColumns = @JoinColumn(name = "especializacaoId"))
     public List<Especializacao> especializacao;
+    @NotNull
     @OneToOne
     @JoinColumn(name = "contatoId", referencedColumnName = "contatoId", nullable = false)
     public Contato contato;
+    @NotNull
     @ManyToMany
     @JoinTable(name = "centroAtividade",
               joinColumns = @JoinColumn(name = "centroId"),

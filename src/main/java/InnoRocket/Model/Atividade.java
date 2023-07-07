@@ -1,4 +1,6 @@
 package InnoRocket.Model;
+import org.jetbrains.annotations.NotNull;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -10,8 +12,11 @@ public class Atividade implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer atividadeId;
-
+    @NotNull
+    @Column( nullable = false )
     public String nome;
+    @NotNull
+    @Column( nullable = false )
     public String descricao;
 
     public Atividade(Integer atividadeId, String nome, String descricao) {

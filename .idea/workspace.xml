@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Ajuste de cadastro do centro" />
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Ajuste de cadastro do centro">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/Validacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/Validacoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,22 +56,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/MarcosVinicius/Desktop/Faculdade/CRUD/InnoRocket2/InnoRocket-Maven",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MarcosVinicius/Desktop/Faculdade/CRUD/InnoRocket2/InnoRocket-Maven&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Guilherme.peritto\IdeaProjects\InnoRocket - Maven\src\main\resources" />
@@ -218,43 +225,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
-          <line>17</line>
+          <line>18</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/CentroDAO.java</url>
@@ -280,6 +257,56 @@
           <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/CentroController.java</url>
           <line>47</line>
           <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/CentroDAO.java</url>
