@@ -71,6 +71,7 @@ public class TableCentro extends AbstractTableModel {
             case INDEX_DATACADASTRO:
                 return registroCentro.getDataCadastro().toString();
             case INDEX_DATACRIACAO:
+                return registroCentro.getDataCriacao().toString();
             default:
                 return new Object();
         }
