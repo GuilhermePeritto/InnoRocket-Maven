@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Ajuste de cadastro do centro">
+    <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação da base">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/Validacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/Validacoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Atividade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Model/Centro.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688698024144</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Criação da base">
+      <option name="closed" value="true" />
+      <created>1688739524853</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1688739524853</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +213,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Criação da base" />
     <MESSAGE value="commit de criação de Model" />
     <MESSAGE value="Criação dos Controllers" />
     <MESSAGE value="Correção importantissima" />
@@ -218,7 +222,8 @@
     <MESSAGE value="Criação dos relatorios personalizados" />
     <MESSAGE value="Alterado index relatório Centro" />
     <MESSAGE value="Ajuste de cadastro do centro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajuste de cadastro do centro" />
+    <MESSAGE value="Criação da base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação da base" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -260,7 +265,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
-          <line>37</line>
+          <line>45</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -305,8 +310,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="169" />
+          <line>32</line>
+          <option name="timeStamp" value="175" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/InnoRocket/DAO/CentroDAO.java</url>

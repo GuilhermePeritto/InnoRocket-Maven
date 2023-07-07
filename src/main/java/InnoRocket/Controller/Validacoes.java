@@ -1,6 +1,7 @@
 package InnoRocket.Controller;
 
 import javax.swing.*;
+import java.lang.reflect.Method;
 import java.util.regex.Pattern;
 
 public class Validacoes {
@@ -52,5 +53,9 @@ public class Validacoes {
         return text.matches("[0-9]+");
         // o zé vi que essse !telefone.matches("\\d+")); significa que estamos procurando um ou mais dígitos
         // vi isso no chatGPT não tenho vergonha não minto tbm sou filho de deus KKKKKKK
+    }
+
+    public static void ValidarCampoVazio(String campo) throws Exception {
+        if(campo == null || campo.equals("")) throw new Exception("Campo inválido!");
     }
 }
