@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import static InnoRocket.View.MenuView.*;
 
@@ -59,14 +60,22 @@ public class MenuFrame extends JFrame {
         editarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                listBoxProcessos();
+                try {
+                    listBoxProcessos();
+                } catch (SQLIntegrityConstraintViolationException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 
         relatorioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                listBoxRelatorios();
+                try {
+                    listBoxRelatorios();
+                } catch (SQLIntegrityConstraintViolationException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 

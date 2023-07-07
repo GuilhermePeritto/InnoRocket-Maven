@@ -2,9 +2,11 @@ package InnoRocket.DAO;
 
 import InnoRocket.Model.Atividade;
 import InnoRocket.Model.Foto;
+import InnoRocket.Model.Uf;
 
 import javax.persistence.*;
 import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -88,15 +90,18 @@ public class AtividadeDAO {
         emf.close();
     }
 
-    public static void excluir(Atividade atividade) {
+    public static void excluir(Atividade atividade) throws SQLIntegrityConstraintViolationException{
+        try {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-
         em.getTransaction().begin();
         em.remove(em.merge(atividade));
         em.getTransaction().commit();
         System.out.println("Atividade excluída com sucesso!");
         em.close();
         emf.close();
+        } catch (Exception e) {
+            throw new SQLIntegrityConstraintViolationException();
+        }
     }
 }

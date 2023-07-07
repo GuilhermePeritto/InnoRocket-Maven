@@ -2,6 +2,7 @@ package InnoRocket.Controller;
 import InnoRocket.DAO.*;
 import InnoRocket.Model.Uf;
 import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 import static InnoRocket.View.MenuView.menuExcluir;
 
@@ -47,7 +48,7 @@ public class UfController extends Validacoes{
         }
     }
 
-    public static void excluir() {
+    public static void excluir() throws SQLIntegrityConstraintViolationException {
         try {
             Object[] selectionValues = UfDAO.listarPorSigla();
             String initialSelection = (String) selectionValues[0];

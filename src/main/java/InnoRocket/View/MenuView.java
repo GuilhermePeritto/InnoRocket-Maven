@@ -5,6 +5,7 @@ import InnoRocket.DAO.*;
 import InnoRocket.Form.*;
 
 import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 public class MenuView {
 
@@ -62,7 +63,7 @@ public class MenuView {
 //        }
     }
 
-    public static void listBoxProcessos() {
+    public static void listBoxProcessos() throws SQLIntegrityConstraintViolationException {
 //        try {
             Object[] selectionValues = {"Alterar Dados", "Excluir Cadastro"};
             String initialSelection = (String) selectionValues[0];
@@ -88,7 +89,7 @@ public class MenuView {
 //        }
     }
 
-    public static void listBoxRelatorios() {
+    public static void listBoxRelatorios() throws SQLIntegrityConstraintViolationException {
 //        try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especialização", "UF"};
             String initialSelection = (String) selectionValues[0];
@@ -131,7 +132,7 @@ public class MenuView {
 //        }
     }
 
-    public static void menuAlterar() {
+    public static void menuAlterar() throws SQLIntegrityConstraintViolationException {
 //        try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especialização", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
@@ -178,7 +179,7 @@ public class MenuView {
 //        }
     }
 
-    public static void menuExcluir() {
+    public static void menuExcluir() throws SQLIntegrityConstraintViolationException {
 //        try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
@@ -222,7 +223,7 @@ public class MenuView {
 //            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de exclusão." + e.getMessage());
 //        }
     }
-    public static void listBoxRelatorioCentro(){
+    public static void listBoxRelatorioCentro() throws SQLIntegrityConstraintViolationException {
         String[] opcoesMenuProcesso = {"Centros", "Centro Por Especialização", "Centro Por Cidade", "Voltar"};
         int menu_processos = JOptionPane.showOptionDialog(null, "Escolha uma opção:",
                 "Menu Relatórios",

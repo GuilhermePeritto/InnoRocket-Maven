@@ -103,12 +103,10 @@ public class CentroDAO {
     public static void excluir(Centro centro) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-
         em.getTransaction().begin();
         centro = em.merge(centro);
         em.remove(centro);
         em.getTransaction().commit();
-
         em.close();
         emf.close();
     }

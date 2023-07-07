@@ -10,6 +10,7 @@ import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 import java.util.Vector;
 
@@ -54,7 +55,11 @@ public class RelatorioContatoForm extends JPanel {
             frame.addWindowListener(new WindowAdapter() {
                 public void windowClosing(WindowEvent evt) {
                     frame.setVisible(false);
-                    listBoxRelatorios();
+                    try {
+                        listBoxRelatorios();
+                    } catch (SQLIntegrityConstraintViolationException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             });
             Vector<Contato> vetorDados = new Vector<Contato>();

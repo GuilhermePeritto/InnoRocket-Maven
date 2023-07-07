@@ -72,7 +72,6 @@ public class CidadeDAO {
     public static void excluir(Cidade cidade) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-
         em.getTransaction().begin();
         cidade = em.merge(cidade);
         em.remove(cidade);

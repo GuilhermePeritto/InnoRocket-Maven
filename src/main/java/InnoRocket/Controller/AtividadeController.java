@@ -5,6 +5,7 @@ import InnoRocket.Model.Atividade;
 import InnoRocket.Model.Uf;
 
 import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 public class AtividadeController extends Validacoes{
@@ -37,15 +38,18 @@ public class AtividadeController extends Validacoes{
         }
     }
 
-    public static void excluir() {
+    public static void excluir() throws SQLIntegrityConstraintViolationException {
+        try {
         Object[] selectionValues = AtividadeDAO.listaPorNome();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a atividade!",
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Atividade> atividades = AtividadeDAO.buscaPorNome((String) selection);
-
         AtividadeDAO.excluir(atividades.get(0));
         JOptionPane.showMessageDialog(null, "Atividade excluída com sucesso!");
+        } catch (SQLIntegrityConstraintViolationException e) {
+            JOptionPane.showMessageDialog(null, "Não é possível excluir uma atividade que está sendo utilizada em um processo.");
+        }
 
     }
 }
