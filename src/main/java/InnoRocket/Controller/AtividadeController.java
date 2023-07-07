@@ -8,15 +8,13 @@ import javax.swing.*;
 import java.util.List;
 
 public class AtividadeController extends Validacoes{
-    public static void cadastrar() throws ClassNotFoundException {
-        String nome = getValidNome(null);
-        String descricao = getValidDescricao(null);
+    public static void cadastrar() throws Exception {
+        String nome = JOptionPane.showInputDialog("Digite o nome da atividade: ");
+        ValidarCampoVazio(nome);
+        String descricao = JOptionPane.showInputDialog("Digite a descrição da atividade: ");
+        ValidarCampoVazio(descricao);
         Atividade atividade = new Atividade(null, nome, descricao);
         AtividadeDAO.salvar(atividade);
-    }
-
-    public static void ValidarCampoVazio(String campo) throws Exception {
-        if(campo == null || campo.equals("")) throw new Exception("Campo inválido!");
     }
 
     public static void alterar() {
@@ -25,7 +23,6 @@ public class AtividadeController extends Validacoes{
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione a atividade!",
                     "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-            if(selection== null) return;
             List<Atividade> atividades = AtividadeDAO.buscaPorNome((String) selection);
             String nome = JOptionPane.showInputDialog("Digite o novo nome da atividade: ", atividades.get(0).getNome());
             ValidarCampoVazio(nome);
