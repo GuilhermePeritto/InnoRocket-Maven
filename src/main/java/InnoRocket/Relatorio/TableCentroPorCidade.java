@@ -1,6 +1,7 @@
 package InnoRocket.Relatorio;
+
 import InnoRocket.Model.CentroPorCidade;
-import InnoRocket.Model.Cidade;
+
 import javax.swing.table.AbstractTableModel;
 import java.util.Vector;
 
@@ -8,8 +9,7 @@ public class TableCentroPorCidade extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
     public static final int INDEX_CIDADE = 0;
-    public static final int INDEX_QUANTCENTRO = 1;
-
+    public static final int INDEX_QUANT = 1;
     public static final int INDEX_ESCONDIDO = 2;
 
     protected String[] nomeColunas;
@@ -32,12 +32,12 @@ public class TableCentroPorCidade extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int linha, int coluna) {
-        CentroPorCidade registroCidade = vetorDados.get(linha);
+        CentroPorCidade registroFoto = vetorDados.get(linha);
         switch (coluna) {
             case INDEX_CIDADE:
-                return registroCidade.getCidade();
-            case INDEX_QUANTCENTRO:
-                return registroCidade.getQuantidadeCentro();
+                return registroFoto.getCidade();
+            case INDEX_QUANT:
+                return registroFoto.getQuantidadeCentro();
             default:
                 return new Object();
         }

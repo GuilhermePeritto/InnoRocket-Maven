@@ -2,9 +2,9 @@ package InnoRocket.Model;
 
 public class CentroPorCidade {
     public String cidade;
-    public int quantidadeCentro;
+    public Integer quantidadeCentro;
 
-    public CentroPorCidade(String cidade, int quantidadeCentro) {
+    public CentroPorCidade(String cidade, Integer quantidadeCentro) {
         this.cidade = cidade;
         this.quantidadeCentro = quantidadeCentro;
     }
@@ -17,11 +17,11 @@ public class CentroPorCidade {
         this.cidade = cidade;
     }
 
-    public int getQuantidadeCentro() {
+    public Integer getQuantidadeCentro() {
         return quantidadeCentro;
     }
 
-    public void setQuantidadeCentro(int quantidadeCentro) {
+    public void setQuantidadeCentro(Integer quantidadeCentro) {
         this.quantidadeCentro = quantidadeCentro;
     }
 

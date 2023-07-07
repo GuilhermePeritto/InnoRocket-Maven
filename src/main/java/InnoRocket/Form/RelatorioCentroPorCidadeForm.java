@@ -1,8 +1,9 @@
 package InnoRocket.Form;
 
 import InnoRocket.Model.CentroPorCidade;
+import InnoRocket.Model.Cidade;
 import InnoRocket.Relatorio.TableCentroPorCidade;
-import InnoRocket.Relatorio.TableCentroPorEspecializacao;
+import InnoRocket.Relatorio.TableCidade;
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.*;
@@ -19,7 +20,7 @@ public class RelatorioCentroPorCidadeForm extends JPanel {
     private static final long serialVersionUID = 1L;
 
     public static final String[] nomeColunas =
-            {"Cidade", "Quantidade Centro", ""};
+            {"Cidade", "Centro", ""};
 
     protected JTable table;
     protected JScrollPane scroller;
@@ -45,10 +46,10 @@ public class RelatorioCentroPorCidadeForm extends JPanel {
         add(scroller, BorderLayout.CENTER);
     }
 
-    public static void emitirRelatorio(List<CentroPorCidade> centroPorCidades){
+    public static void emitirRelatorio(List<CentroPorCidade> centroPorCidade){
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-            JFrame frame = new JFrame("Relatorio - Centro por Cidade");
+            JFrame frame = new JFrame("Relatorio - Centro Por Cidade");
 
             frame.addWindowListener(new WindowAdapter() {
                 public void windowClosing(WindowEvent evt) {
@@ -60,12 +61,8 @@ public class RelatorioCentroPorCidadeForm extends JPanel {
                     }
                 }
             });
-            Vector<CentroPorCidade> vetorDados = new Vector<CentroPorCidade>();
-            for (CentroPorCidade centroPorCidade : centroPorCidades) {
-                vetorDados.add(centroPorCidade);
-            }
 
-            frame.getContentPane().add(new RelatorioCentroPorCidadeForm(vetorDados));
+            frame.getContentPane().add(new RelatorioCentroPorCidadeForm(new Vector<CentroPorCidade>(centroPorCidade)));
             frame.pack();
             frame.setVisible(true);
             frame.setLocationRelativeTo(null);

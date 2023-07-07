@@ -37,30 +37,46 @@ public class CentroDAO {
     public static List<CentroPorEspecializacao> listarCentroPorEspecializacao() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-        Query query = em.createNativeQuery("select e.nome as especializacao, count(*) as quantidadeCentro " +
-                "from centro c " +
-                "join centroEspecializacao ce " +
-                "    on c.CentroId = ce.CentroId " +
-                "join especializacao e " +
-                "    on e.EspecializacaoId = ce.EspecializacaoId " +
-                "group by ce.EspecializacaoId");
-        List<CentroPorEspecializacao> CentroPorEspecializacao = (List<CentroPorEspecializacao>)query.getResultList();
+        String sqlQuery = "SELECT e.nome AS especializacao, COUNT(*) AS quantidadeCentro " +
+                "FROM centro c " +
+                "JOIN centroEspecializacao ce ON c.CentroId = ce.CentroId " +
+                "JOIN especializacao e ON e.EspecializacaoId = ce.EspecializacaoId " +
+                "GROUP BY ce.EspecializacaoId";
 
-        em.close();
-        emf.close();
+        TypedQuery<Object[]> query = (TypedQuery<Object[]>) em.createNativeQuery(sqlQuery);
+        List<Object[]> results = query.getResultList();
 
-        return CentroPorEspecializacao;
+        List<CentroPorEspecializacao> centroPorEspecializacoes = new ArrayList<>();
+        for (Object[] result : results) {
+            String especializacao = (String) result[0];
+            Integer quantidadeCentro = ((Number) result[1]).intValue();
+
+            CentroPorEspecializacao centroPorEspecializacao = new CentroPorEspecializacao(especializacao, quantidadeCentro.toString());
+            centroPorEspecializacoes.add(centroPorEspecializacao);
+        }
+
+        return centroPorEspecializacoes;
     }
 
     public static List<CentroPorCidade> listarCentroPorCidade() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-        Query query = em.createNativeQuery("select  cid.nome as cidade, count(cid.CidadeId) as quantidadecentro " +
-                "from cidade cid " +
-                "join centro c " +
-                "    on c.CidadeId = cid.CidadeId " +
-                "group by cid.nome");
-        List<CentroPorCidade> centroPorCidades = (List<CentroPorCidade>)query.getResultList();
+        String sqlQuery = "SELECT cid.nome AS cidade, COUNT(cid.CidadeId) AS quantidadecentro " +
+                "FROM cidade cid " +
+                "JOIN centro c ON c.CidadeId = cid.CidadeId " +
+                "GROUP BY cid.nome";
+
+        TypedQuery<Object[]> query = (TypedQuery<Object[]>) em.createNativeQuery(sqlQuery);
+        List<Object[]> results = query.getResultList();
+
+        List<CentroPorCidade> centroPorCidades = new ArrayList<>();
+        for (Object[] result : results) {
+            String cidade = (String) result[0];
+            Integer quantidadeCentro = ((Number) result[1]).intValue();
+
+            CentroPorCidade centroPorCidade = new CentroPorCidade(cidade, quantidadeCentro);
+            centroPorCidades.add(centroPorCidade);
+        }
 
         em.close();
         emf.close();
