@@ -8,6 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,7 +71,8 @@ public class CidadeDAO {
         emf.close();
     }
 
-    public static void excluir(Cidade cidade) {
+    public static void excluir(Cidade cidade) throws SQLIntegrityConstraintViolationException {
+        try {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -79,5 +82,9 @@ public class CidadeDAO {
         System.out.println("Cidade excluída com sucesso!");
         em.close();
         emf.close();
+        JOptionPane.showMessageDialog(null, "Cidade excluida com sucesso!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Não é possível excluir uma cidade que possui centros vinculados.");
+        }
     }
 }

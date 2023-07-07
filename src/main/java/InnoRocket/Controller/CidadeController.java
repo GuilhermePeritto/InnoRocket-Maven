@@ -5,6 +5,7 @@ import InnoRocket.DAO.UfDAO;
 import InnoRocket.Model.Cidade;
 import InnoRocket.Model.Uf;
 import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 public class CidadeController extends Validacoes{
@@ -47,13 +48,12 @@ public class CidadeController extends Validacoes{
         }
     }
 
-    public static void excluir() {
+    public static void excluir() throws SQLIntegrityConstraintViolationException {
         Object[] selectionValues = CidadeDAO.listaPorNomes();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a cidade!",
                 "lista de Cidades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
         CidadeDAO.excluir(cidade.get(0));
-        JOptionPane.showMessageDialog(null, "Cidade excluida com sucesso!");
     }
 }
