@@ -15,7 +15,7 @@ public class UfDAO {
         em.getTransaction().begin();
         em.persist(uf);
         em.getTransaction().commit();
-        System.out.println("Uf salva com sucesso!");
+        System.out.println("UF salva com sucesso!");
         em.close();
         emf.close();
     }
@@ -58,7 +58,7 @@ public class UfDAO {
         em.getTransaction().begin();
         em.merge(uf);
         em.getTransaction().commit();
-        System.out.println("Uf alterada com sucesso!");
+        System.out.println("UF alterada com sucesso!");
         em.close();
         emf.close();
     }
@@ -70,7 +70,7 @@ public class UfDAO {
         em.getTransaction().begin();
         em.remove(em.merge(uf));
         em.getTransaction().commit();
-        System.out.println("Uf excluída com sucesso!");
+        System.out.println("UF excluída com sucesso!");
         em.close();
         emf.close();
     }
