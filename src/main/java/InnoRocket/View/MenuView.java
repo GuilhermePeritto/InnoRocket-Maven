@@ -51,16 +51,6 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxCadastros();
             }
-//        } catch (NullPointerException e) {
-//            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
-//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-//            } else {
-//                listBoxCadastros();
-//            }
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
-//        }
     }
 
     public static void listBoxProcessos() throws SQLIntegrityConstraintViolationException {
@@ -77,16 +67,6 @@ public class MenuView {
                     menuExcluir();
                     break;
             }
-//        } catch (NullPointerException e) {
-//            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
-//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-//            } else {
-//                listBoxProcessos();
-//            }
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
-//        }
     }
 
     public static void listBoxRelatorios() throws SQLIntegrityConstraintViolationException {
@@ -119,17 +99,6 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
             }
-//        } catch (NullPointerException e) {
-//            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
-//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-//            } else {
-//                listBoxRelatorios();
-//            }
-//        }
-//        catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
-//        }
     }
 
     public static void menuAlterar() throws SQLIntegrityConstraintViolationException {
@@ -165,18 +134,6 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
             }
-//
-//        } catch (NullPointerException e) {
-//            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
-//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-//                listBoxProcessos();
-//            } else {
-//                menuAlterar();
-//            }
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de processos." + e.getMessage());
-//        }
     }
 
     public static void menuExcluir() throws SQLIntegrityConstraintViolationException {
@@ -211,17 +168,6 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
             }
-//        } catch (NullPointerException e) {
-//            int opcaoCancelar = JOptionPane.showOptionDialog(null, "Deseja realmente cancelar?",
-//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-//                listBoxProcessos();
-//            } else {
-//                menuExcluir();
-//            }
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de exclusão." + e.getMessage());
-//        }
     }
     public static void listBoxRelatorioCentro() throws SQLIntegrityConstraintViolationException {
         String[] opcoesMenuProcesso = {"Centros", "Centro Por Especialização", "Centro Por Cidade", "Voltar"};

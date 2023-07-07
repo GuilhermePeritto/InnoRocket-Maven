@@ -13,8 +13,7 @@ public class TableContato extends AbstractTableModel {
     public static final int INDEX_NOME = 1;
     public static final int INDEX_TELEFONE = 2;
     public static final int INDEX_EMAIL = 3;
-    public static final int INDEX_CENTRO = 4;
-    public static final int INDEX_ESCONDIDO = 5;
+    public static final int INDEX_ESCONDIDO = 4;
 
     protected String[] nomeColunas;
     protected Vector<Contato> vetorDados;
