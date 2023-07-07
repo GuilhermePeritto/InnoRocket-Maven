@@ -6,29 +6,6 @@ import java.util.regex.Pattern;
 
 public class Validacoes {
 
-    public static String getValidNome(String nome) {
-        do {
-            nome = JOptionPane.showInputDialog("Digite o nome: ");
-            if (nome == null) {
-                return null;
-            }
-            if (nome.trim().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "O nome não pode ser vazio. Por favor, digite um nome válido.");
-            } /*else if (containsSpecialCharacters(nome)) {
-                JOptionPane.showMessageDialog(null, "O nome não pode conter caracteres especiais. Por favor, digite um nome válido.");
-            }*/
-        } while (nome.trim().isEmpty() /*|| containsSpecialCharacters(nome)*/);
-        return nome;
-    }
-
-    public static String getValidDescricao(String descricao) {
-
-            descricao = JOptionPane.showInputDialog("Informe a descrição: ");
-            if (descricao == null) {
-                return null;
-            }
-        return descricao;
-    }
     public static String getValidTelefone(String telefone) {
         do {
             telefone = JOptionPane.showInputDialog("Digite o telefone do Contato: ");

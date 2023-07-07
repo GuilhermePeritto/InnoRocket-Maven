@@ -9,12 +9,18 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class CentroController extends Validacoes{
-    public static void cadastrar() throws ClassNotFoundException {
+    public static void cadastrar() throws Exception {
+        try {
         String nome = JOptionPane.showInputDialog("Digite o nome do Centro: ");
+        ValidarCampoVazio(nome);
         String rua = JOptionPane.showInputDialog("Digite o nome da rua: ");
+        ValidarCampoVazio(rua);
         String cep = JOptionPane.showInputDialog("Digite o CEP: ");
+        ValidarCampoVazio(cep);
         String numero = JOptionPane.showInputDialog("Digite o número: ");
+        ValidarCampoVazio(numero);
         String bairro = JOptionPane.showInputDialog("Digite o bairro: ");
+        ValidarCampoVazio(bairro);
         String complemento = JOptionPane.showInputDialog("Digite o complemento: ");
         Object[] selectionValues = CidadeDAO.listaPorNomes();
         String initialSelection = (String) selectionValues[0];
@@ -32,6 +38,7 @@ public class CentroController extends Validacoes{
             statusCentro = EnumStatusCentro.INATIVO;
         }
         String redesSociais = JOptionPane.showInputDialog("Digite as redes sociais: ");
+        ValidarCampoVazio(redesSociais);
         Object[] selectionValues5 = FotoDAO.listaPorNomes();
         String initialSelection5 = (String) selectionValues5[0];
         Object selection5 = JOptionPane.showInputDialog(null, "Selecione a foto",
@@ -63,9 +70,13 @@ public class CentroController extends Validacoes{
         Centro centro = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, fotos.get(0), dataCadastro, dataCriacao, especializacaos, contato.get(0), ativiadade);
         CentroDAO.salvar(centro);
         System.out.println("Centro cadastrado com sucesso!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
 
     public static void alterar() {
+        try {
         Object[] selectionValues5 = CentroDAO.listaPorNomes();
         String initialSelection5 = (String) selectionValues5[0];
         Object selection5 = JOptionPane.showInputDialog(null, "Selecione o centro que deseja alterar",
@@ -73,11 +84,17 @@ public class CentroController extends Validacoes{
         List<Centro> centro = CentroDAO.buscaPorNome((String) selection5);
 
         String nome = JOptionPane.showInputDialog("Digite o nome do Centro: ", centro.get(0).getNome());
+        ValidarCampoVazio(nome);
         String rua = JOptionPane.showInputDialog("Digite o nome da rua: ", centro.get(0).getRua());
+        ValidarCampoVazio(rua);
         String cep = JOptionPane.showInputDialog("Digite o CEP: ", centro.get(0).getCep());
+        ValidarCampoVazio(cep);
         String numero = JOptionPane.showInputDialog("Digite o número: ", centro.get(0).getNumero());
+        ValidarCampoVazio(numero);
         String bairro = JOptionPane.showInputDialog("Digite o bairro: ", centro.get(0).getBairro());
+        ValidarCampoVazio(bairro);
         String complemento = JOptionPane.showInputDialog("Digite o complemento: ", centro.get(0).getComplemento());
+        ValidarCampoVazio(complemento);
         Object[] selectionValues = CidadeDAO.listaPorNomes();
         String initialSelection = (String) centro.get(0).getCidade().getNome();
         Object selection = JOptionPane.showInputDialog(null, "Selecione a Cidade",
@@ -125,6 +142,9 @@ public class CentroController extends Validacoes{
         Centro centroAlterar = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, foto.get(0), dataCadastro, dataCriacao, especializacaos, contato.get(0), ativiadade);
         CentroDAO.alterar(centroAlterar);
         System.out.println("Centro alterado com sucesso!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
 
     public static void excluir() {
@@ -133,8 +153,7 @@ public class CentroController extends Validacoes{
         Object selection = JOptionPane.showInputDialog(null, "Selecione o centro!",
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Centro> centros = CentroDAO.buscaPorNome((String) selection);
-
         CentroDAO.excluir(centros.get(0));
-        System.out.println("Centro excluída com sucesso!");
+        JOptionPane.showMessageDialog(null, "Centro excluido com sucesso!");
     }
 }

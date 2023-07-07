@@ -15,7 +15,6 @@ public class CidadeDAO {
     public static void salvar(Cidade cidade) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-        System.out.println("Cidade salva com sucesso!");
         em.getTransaction().begin();
         em.persist(cidade);
         em.getTransaction().commit();
