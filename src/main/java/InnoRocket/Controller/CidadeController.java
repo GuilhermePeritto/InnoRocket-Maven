@@ -26,23 +26,53 @@ public class CidadeController extends Validacoes{
         }
     }
 
+//    public static void alterar() {
+//        try {
+//        Object[] selectionValues = CidadeDAO.listaPorNomes();
+//        String initialSelection = (String) selectionValues[0];
+//        Object selection = JOptionPane.showInputDialog(null, "Selecione a cidade!",
+//                "lista de Cidades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+//        List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
+//        String nome = JOptionPane.showInputDialog("Digite o nome da cidade: ", cidade.get(0).getNome());
+//        ValidarCampoVazio(nome);
+//        Object[] selectionValues1 = UfDAO.listarPorSigla();
+//        String initialSelection1 = (String) selectionValues1[0];
+//        Object selection1 = JOptionPane.showInputDialog(null, "Selecione a UF!",
+//                "Listar Uf", JOptionPane.QUESTION_MESSAGE, null, selectionValues1, initialSelection1);
+//        List<Uf> uf = UfDAO.buscaPorSigla((String) selection1);
+//        Cidade cidadeAlterar = new Cidade(null, nome, uf.get(0));
+//        CidadeDAO.alterar(cidadeAlterar);
+//        JOptionPane.showMessageDialog(null, "Cidade alterada com sucesso!");
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, e.getMessage());
+//        }
+//    }
+
     public static void alterar() {
         try {
-        Object[] selectionValues = CidadeDAO.listaPorNomes();
-        String initialSelection = (String) selectionValues[0];
-        Object selection = JOptionPane.showInputDialog(null, "Selecione a cidade!",
-                "lista de Cidades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-        List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
-        String nome = JOptionPane.showInputDialog("Digite o nome da cidade: ", cidade.get(0).getNome());
-        ValidarCampoVazio(nome);
-        Object[] selectionValues1 = UfDAO.listarPorSigla();
-        String initialSelection1 = (String) selectionValues1[0];
-        Object selection1 = JOptionPane.showInputDialog(null, "Selecione a UF!",
-                "Listar Uf", JOptionPane.QUESTION_MESSAGE, null, selectionValues1, initialSelection1);
-        List<Uf> uf = UfDAO.buscaPorSigla((String) selection1);
-        Cidade cidadeAlterar = new Cidade(null, nome, uf.get(0));
-        CidadeDAO.alterar(cidadeAlterar);
-        JOptionPane.showMessageDialog(null, "Cidade alterada com sucesso!");
+            Object[] selectionValues = CidadeDAO.listaPorNomes();
+            String initialSelection = (String) selectionValues[0];
+            Object selection = JOptionPane.showInputDialog(null, "Selecione a cidade!",
+                    "lista de Cidades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+            List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
+
+            if (!cidade.isEmpty()) {
+                String nome = JOptionPane.showInputDialog("Digite o nome da cidade: ", cidade.get(0).getNome());
+                ValidarCampoVazio(nome);
+
+                Object[] selectionValues1 = UfDAO.listarPorSigla();
+                String initialSelection1 = (String) selectionValues1[0];
+                Object selection1 = JOptionPane.showInputDialog(null, "Selecione a UF!",
+                        "Listar Uf", JOptionPane.QUESTION_MESSAGE, null, selectionValues1, initialSelection1);
+                List<Uf> uf = UfDAO.buscaPorSigla((String) selection1);
+
+                Cidade cidadeAlterar = new Cidade(cidade.get(0).getCidadeId(), nome, uf.get(0));
+                CidadeDAO.alterar(cidadeAlterar);
+
+                JOptionPane.showMessageDialog(null, "Cidade alterada com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Cidade não encontrada!");
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
