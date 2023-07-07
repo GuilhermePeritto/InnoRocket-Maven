@@ -39,7 +39,7 @@ public class ContatoController extends Validacoes{
         ValidarCampoVazio(telefone);
         String email = JOptionPane.showInputDialog("Digite o email do Contato: ", contato.get(0).getEmail());
         ValidarCampoVazio(email);
-        Contato contatoAlterar = new Contato(null, nome, telefone, email);
+        Contato contatoAlterar = new Contato(contato.get(0).getContatoId(), nome, telefone, email);
         ContatoDAO.alterar(contatoAlterar);
         JOptionPane.showMessageDialog(null, "Contato alterado com sucesso!");
         } catch (Exception e) {

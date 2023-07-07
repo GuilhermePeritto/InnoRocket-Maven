@@ -112,7 +112,6 @@ public class CentroDAO {
         em.getTransaction().begin();
         em.merge(centro);
         em.getTransaction().commit();
-
         em.close();
         emf.close();
     }
