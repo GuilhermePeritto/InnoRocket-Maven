@@ -11,7 +11,7 @@ public class TableAtividade extends AbstractTableModel {
     public static final int INDEX_CODIGO = 0;
     public static final int INDEX_NOME = 1;
     public static final int INDEX_DESCRICAO = 2;
-    public static final int INDEX_ESCONDIDO = 4;
+    public static final int INDEX_ESCONDIDO = 3;
 
     protected String[] nomeColunas;
     protected Vector<Atividade> vetorDados;
