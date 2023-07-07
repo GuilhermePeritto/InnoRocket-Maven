@@ -69,7 +69,7 @@ public class CentroController extends Validacoes{
         List<Atividade> ativiadade = AtividadeDAO.buscaPorNome((String) selection4);
         Centro centro = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, fotos.get(0), dataCadastro, dataCriacao, especializacaos, contato.get(0), ativiadade);
         CentroDAO.salvar(centro);
-        System.out.println("Centro cadastrado com sucesso!");
+        JOptionPane.showMessageDialog(null, "Centro cadastrado com sucesso!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -124,21 +124,25 @@ public class CentroController extends Validacoes{
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Data invalida, tente no formato dd/MM/yyyy");
         }
+
         Object[] selectionValues2 = EspecioalizacaoDAO.listaPorNomes();
-        String initialSelection2 = (String) centro.get(0).getEspecializacao().get(0).getNome();
+        String initialSelection2 = (String) selectionValues2[0];
         Object selection2 = JOptionPane.showInputDialog(null, "Selecione a especializacao",
-                "Listar Especializações", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-        List<Especializacao> especializacaos = EspecioalizacaoDAO.buscaPorNome((String) selection);
+                "Listar Especializações", JOptionPane.QUESTION_MESSAGE, null, selectionValues2, initialSelection2);
+        List<Especializacao> especializacaos = EspecioalizacaoDAO.buscaPorNome((String) selection2);
+
         Object[] selectionValues3 = ContatoDAO.listaPorNomes();
-        String initialSelection3 = (String) centro.get(0).getContato().getNome();
+        String initialSelection3 = (String) selectionValues3[0];
         Object selection3 = JOptionPane.showInputDialog(null, "Selecione o contato",
-                "Listar Contatos", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-        List<Contato> contato = ContatoDAO.buscaPorNome((String) selection);
+                "Listar Contatos", JOptionPane.QUESTION_MESSAGE, null, selectionValues3, initialSelection3);
+        List<Contato> contato = ContatoDAO.buscaPorNome((String) selection3);
+
         Object[] selectionValues4 = AtividadeDAO.listaPorNome();
-        String initialSelection4 = (String) centro.get(0).getAtividade().get(0).getNome();
+        String initialSelection4 = (String) selectionValues4[0];
         Object selection4 = JOptionPane.showInputDialog(null, "Selecione a atividade",
-                "Listar Atividades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-        List<Atividade> ativiadade = AtividadeDAO.buscaPorNome((String) selection);
+                "Listar Atividades", JOptionPane.QUESTION_MESSAGE, null, selectionValues4, initialSelection4);
+        List<Atividade> ativiadade = AtividadeDAO.buscaPorNome((String) selection4);
+
         Centro centroAlterar = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, foto.get(0), dataCadastro, dataCriacao, especializacaos, contato.get(0), ativiadade);
         CentroDAO.alterar(centroAlterar);
         JOptionPane.showMessageDialog(null, "Centro alterado com sucesso!");
