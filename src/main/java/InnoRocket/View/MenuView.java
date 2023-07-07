@@ -137,7 +137,6 @@ public class MenuView {
     }
 
     public static void menuExcluir() throws SQLIntegrityConstraintViolationException {
-//        try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especialização", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de processo",
@@ -164,6 +163,7 @@ public class MenuView {
                     break;
                 case "UF":
                     UfController.excluir();
+                    break;
                 default:
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
