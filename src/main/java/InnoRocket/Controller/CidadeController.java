@@ -49,11 +49,15 @@ public class CidadeController extends Validacoes{
     }
 
     public static void excluir() throws SQLIntegrityConstraintViolationException {
-        Object[] selectionValues = CidadeDAO.listaPorNomes();
-        String initialSelection = (String) selectionValues[0];
-        Object selection = JOptionPane.showInputDialog(null, "Selecione a cidade!",
-                "lista de Cidades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
-        List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
-        CidadeDAO.excluir(cidade.get(0));
+        try {
+            Object[] selectionValues = CidadeDAO.listaPorNomes();
+            String initialSelection = (String) selectionValues[0];
+            Object selection = JOptionPane.showInputDialog(null, "Selecione a cidade!",
+                    "lista de Cidades", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
+            List<Cidade> cidade = CidadeDAO.buscaPorNome((String) selection);
+            CidadeDAO.excluir(cidade.get(0));
+        } catch (SQLIntegrityConstraintViolationException e) {
+            JOptionPane.showMessageDialog(null, "Cidade não pode ser excluida pois está sendo usada em um processo!");
+        }
     }
 }

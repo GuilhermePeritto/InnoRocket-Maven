@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,16 +65,20 @@ public class UfDAO {
         emf.close();
     }
 
-    public static void excluir(Uf uf) {
+    public static void excluir(Uf uf) throws SQLIntegrityConstraintViolationException {
+        try {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-
         em.getTransaction().begin();
         em.remove(em.merge(uf));
         em.getTransaction().commit();
         System.out.println("UF excluída com sucesso!");
         em.close();
         emf.close();
+            JOptionPane.showMessageDialog(null, "UF excluída com sucesso!");
+        } catch (Exception e) {
+            throw new SQLIntegrityConstraintViolationException();
+        }
     }
 
 }

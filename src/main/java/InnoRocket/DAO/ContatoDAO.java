@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,16 +69,18 @@ public class ContatoDAO {
         emf.close();
     }
 
-    public static void excluir(Contato contato) {
+    public static void excluir(Contato contato) throws SQLIntegrityConstraintViolationException {
+        try{
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-
         em.getTransaction().begin();
         contato = em.merge(contato);
         em.remove(contato);
         em.getTransaction().commit();
-
         em.close();
         emf.close();
+        } catch (Exception e) {
+            throw new SQLIntegrityConstraintViolationException();
+        }
     }
 }

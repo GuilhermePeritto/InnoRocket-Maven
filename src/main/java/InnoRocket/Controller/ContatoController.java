@@ -3,6 +3,7 @@ package InnoRocket.Controller;
 import InnoRocket.DAO.ContatoDAO;
 import InnoRocket.Model.Contato;
 import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -47,12 +48,15 @@ public class ContatoController extends Validacoes{
     }
 
     public static void excluir() {
+        try{
         Object[] selectionValues = ContatoDAO.listaPorNomes();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione o Contato!",
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Contato> contato = ContatoDAO.buscaPorNome((String) selection);
         ContatoDAO.excluir(contato.get(0));
-        JOptionPane.showMessageDialog(null, "Contato excluido com sucesso!");
+        } catch (SQLIntegrityConstraintViolationException e) {
+            JOptionPane.showMessageDialog(null, "Contato não pode ser excluido pois está sendo usado em um processo!");
+        }
     }
 }

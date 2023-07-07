@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,16 +64,19 @@ public class EspecioalizacaoDAO {
         emf.close();
     }
 
-    public static void excluir(Especializacao especializacao) {
+    public static void excluir(Especializacao especializacao) throws SQLIntegrityConstraintViolationException {
+        try {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
-
         em.getTransaction().begin();
         em.remove(em.merge(especializacao));
         em.getTransaction().commit();
         System.out.println("Especializacao excluída com sucesso!");
         em.close();
         emf.close();
+        } catch (Exception e) {
+            throw new SQLIntegrityConstraintViolationException();
+        }
     }
 
 }

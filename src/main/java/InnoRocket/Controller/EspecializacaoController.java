@@ -3,6 +3,7 @@ package InnoRocket.Controller;
 import InnoRocket.DAO.EspecioalizacaoDAO;
 import InnoRocket.Model.Especializacao;
 import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -39,6 +40,7 @@ public class EspecializacaoController extends Validacoes{
     }
 
     public static void excluir() {
+        try{
         Object[] selectionValues = EspecioalizacaoDAO.listaPorNomes();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a Especializacao!",
@@ -46,5 +48,8 @@ public class EspecializacaoController extends Validacoes{
         List<Especializacao> especializacao = EspecioalizacaoDAO.buscaPorNome((String) selection);
         EspecioalizacaoDAO.excluir(especializacao.get(0));
         JOptionPane.showMessageDialog(null, "Especializacao excluida com sucesso!");
+        } catch (SQLIntegrityConstraintViolationException e) {
+            JOptionPane.showMessageDialog(null, "Especializacao não pode ser excluida pois está sendo usada em um processo!");
+        }
     }
 }

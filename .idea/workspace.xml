@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fb81d7c-14e3-459a-afc2-b34cb674c0bb" name="Changes" comment="Criação da base">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/AtividadeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Controller/UfController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/AtividadeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioAtividadeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioAtividadeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioCentroForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioCentroForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioCentroPorCidadeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioCentroPorCidadeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioCentroPorEspecializacaoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioCentroPorEspecializacaoForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioCidadeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioCidadeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioContatoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioContatoForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioEspecializacaoForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioEspecializacaoForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioUfForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/Form/RelatorioUfForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/View/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/UfDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InnoRocket/DAO/UfDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +232,23 @@
       <option name="project" value="LOCAL" />
       <updated>1688742940152</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Criação da base">
+      <option name="closed" value="true" />
+      <created>1688744146411</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1688744146411</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Criação da base">
+      <option name="closed" value="true" />
+      <created>1688744295299</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1688744295299</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

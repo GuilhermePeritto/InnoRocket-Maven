@@ -55,22 +55,9 @@ public class UfController extends Validacoes{
             Object selection = JOptionPane.showInputDialog(null, "Selecione a UF",
                     "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
             List<Uf> uf = UfDAO.buscaPorSigla((String) selection);
-            int opcaoExcluir = JOptionPane.showOptionDialog(null, "Deseja realmente excluir o registro?",
-                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-            if (opcaoExcluir == JOptionPane.YES_NO_OPTION) {
-                UfDAO.excluir(uf.get(0));
-            } else {
-                excluir();
-            }
-        } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null, "Deseja realmente cancelar?",
-                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-                menuExcluir();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao excluir o registro!");
+            UfDAO.excluir(uf.get(0));
+        } catch (SQLIntegrityConstraintViolationException e) {
+            JOptionPane.showMessageDialog(null, "Não é possível excluir uma uf que está sendo utilizada em um processo.");
         }
-        JOptionPane.showMessageDialog(null, "Cadastro excluído com sucesso!");
     }
 }

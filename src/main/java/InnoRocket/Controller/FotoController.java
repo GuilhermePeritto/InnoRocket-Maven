@@ -3,6 +3,7 @@ package InnoRocket.Controller;
 import InnoRocket.DAO.FotoDAO;
 import InnoRocket.Model.Foto;
 import javax.swing.*;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 public class FotoController extends Validacoes{
@@ -36,6 +37,7 @@ public class FotoController extends Validacoes{
     }
 
     public static void excluir() {
+        try{
         Object[] selectionValues = FotoDAO.listaPorNomes();
         String initialSelection = (String) selectionValues[0];
         Object selection = JOptionPane.showInputDialog(null, "Selecione a Foto!",
@@ -43,5 +45,8 @@ public class FotoController extends Validacoes{
         List<Foto> foto = FotoDAO.buscaPorNome((String) selection);
         FotoDAO.excluir(foto.get(0));
         JOptionPane.showMessageDialog(null, "Foto excluida com sucesso!");
+        } catch (SQLIntegrityConstraintViolationException e) {
+            JOptionPane.showMessageDialog(null,"Não é possível excluir uma foto que está sendo usada por um usuário!");
+        }
     }
 }

@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,7 +64,8 @@ public class FotoDAO {
         emf.close();
     }
 
-    public static void excluir(Foto foto) {
+    public static void excluir(Foto foto) throws SQLIntegrityConstraintViolationException {
+        try {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("InnoRocketMaven");
         EntityManager em = emf.createEntityManager();
 
@@ -73,6 +75,9 @@ public class FotoDAO {
         System.out.println("Foto excluída com sucesso!");
         em.close();
         emf.close();
+        } catch (Exception e) {
+            throw new SQLIntegrityConstraintViolationException();
+        }
     }
 
 }
