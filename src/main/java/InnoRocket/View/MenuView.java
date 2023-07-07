@@ -17,8 +17,8 @@ public class MenuView {
         FotoDAO.listar();
         UfDAO.listar();
     }
-    public static void listBoxCadastros() {
-        try {
+    public static void listBoxCadastros() throws Exception {
+//        try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especialização", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de cadastro",
@@ -50,20 +50,20 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxCadastros();
             }
-        } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
-                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-            } else {
-                listBoxCadastros();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
-        }
+//        } catch (NullPointerException e) {
+//            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
+//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
+//            } else {
+//                listBoxCadastros();
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
+//        }
     }
 
     public static void listBoxProcessos() {
-        try {
+//        try {
             Object[] selectionValues = {"Alterar Dados", "Excluir Cadastro"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o processo!",
@@ -76,20 +76,20 @@ public class MenuView {
                     menuExcluir();
                     break;
             }
-        } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
-                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-            } else {
-                listBoxProcessos();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
-        }
+//        } catch (NullPointerException e) {
+//            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
+//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
+//            } else {
+//                listBoxProcessos();
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
+//        }
     }
 
     public static void listBoxRelatorios() {
-        try {
+//        try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especialização", "UF"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o relatório",
@@ -118,21 +118,21 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
             }
-        } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
-                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-            } else {
-                listBoxRelatorios();
-            }
-        }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
-        }
+//        } catch (NullPointerException e) {
+//            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
+//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
+//            } else {
+//                listBoxRelatorios();
+//            }
+//        }
+//        catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de cadastro." + e.getMessage());
+//        }
     }
 
     public static void menuAlterar() {
-        try {
+//        try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especialização", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de processo",
@@ -164,22 +164,22 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
             }
-
-        } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
-                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-                listBoxProcessos();
-            } else {
-                menuAlterar();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de processos." + e.getMessage());
-        }
+//
+//        } catch (NullPointerException e) {
+//            int opcaoCancelar = JOptionPane.showOptionDialog(null, " Deseja realmente cancelar? ",
+//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
+//                listBoxProcessos();
+//            } else {
+//                menuAlterar();
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de processos." + e.getMessage());
+//        }
     }
 
     public static void menuExcluir() {
-        try {
+//        try {
             Object[] selectionValues = {"Atividade", "Centro", "Cidade", "Contato", "Especializacao", "Foto", "UF"};
             String initialSelection = (String) selectionValues[0];
             Object selection = JOptionPane.showInputDialog(null, "Selecione o tipo de processo",
@@ -210,17 +210,17 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Por favor, selecione uma opção válida!");
                     listBoxProcessos();
             }
-        } catch (NullPointerException e) {
-            int opcaoCancelar = JOptionPane.showOptionDialog(null, "Deseja realmente cancelar?",
-                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
-                listBoxProcessos();
-            } else {
-                menuExcluir();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de exclusão." + e.getMessage());
-        }
+//        } catch (NullPointerException e) {
+//            int opcaoCancelar = JOptionPane.showOptionDialog(null, "Deseja realmente cancelar?",
+//                    "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+//            if (opcaoCancelar == JOptionPane.YES_NO_OPTION) {
+//                listBoxProcessos();
+//            } else {
+//                menuExcluir();
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "Erro ao chamar o menu de exclusão." + e.getMessage());
+//        }
     }
     public static void listBoxRelatorioCentro(){
         String[] opcoesMenuProcesso = {"Centros", "Centro Por Especialização", "Centro Por Cidade", "Voltar"};

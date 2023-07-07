@@ -141,7 +141,7 @@ public class CentroController extends Validacoes{
         List<Atividade> ativiadade = AtividadeDAO.buscaPorNome((String) selection);
         Centro centroAlterar = new Centro(null, nome, rua, cep, numero, bairro, complemento, cidade.get(0), statusCentro, redesSociais, foto.get(0), dataCadastro, dataCriacao, especializacaos, contato.get(0), ativiadade);
         CentroDAO.alterar(centroAlterar);
-        System.out.println("Centro alterado com sucesso!");
+        JOptionPane.showMessageDialog(null, "Centro alterado com sucesso!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
