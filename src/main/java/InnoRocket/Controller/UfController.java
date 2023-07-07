@@ -12,7 +12,7 @@ public class UfController extends Validacoes{
             JOptionPane.showMessageDialog(null, "A sigla deve conter apenas 2 caracteres.");
             cadastrar();
         }
-        String nome = JOptionPane.showInputDialog("Digite o nome da UF: ");
+        String nome = getValidNome(null);
         Uf ufCadastrar = new Uf(null,sigla, nome);
         UfDAO.salvar(ufCadastrar);
         JOptionPane.showMessageDialog(null, "Cadastro criado com sucesso!");
@@ -25,13 +25,12 @@ public class UfController extends Validacoes{
                 "Processo", JOptionPane.QUESTION_MESSAGE, null, selectionValues, initialSelection);
         List<Uf> uf = UfDAO.buscaPorSigla((String) selection);
 
-
         String sigla = JOptionPane.showInputDialog("Digite a sigla da UF: ", uf.get(0).getSigla());
         if (sigla.length() > 2){
             JOptionPane.showMessageDialog(null, "A sigla deve conter apenas 2 caracteres.");
             alterar();
         }
-        String nome = JOptionPane.showInputDialog("Digite o nome da UF: ", uf.get(0).getNome());
+        String nome = getValidNome(null);
         Uf ufAlterar = new Uf(uf.get(0).getUfId(),sigla, nome);
         UfDAO.alterar(ufAlterar);
         JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!");

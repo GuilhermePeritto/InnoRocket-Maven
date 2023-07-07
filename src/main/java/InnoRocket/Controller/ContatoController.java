@@ -54,47 +54,4 @@ public class ContatoController extends Validacoes{
         List<Contato> contato = ContatoDAO.buscaPorNome((String) selection);
         ContatoDAO.excluir(contato.get(0));
     }
-
-
-    // esse metodos eu pegui aqui da empresa é um teste para ver se da boa
-    private static String getValidNome(String nome) {
-        do {
-            nome = JOptionPane.showInputDialog("Digite o nome do Contato: ");
-            if (nome == null) {
-                return null;
-            }
-            if (nome.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "O nome não pode ser vazio. Por favor, digite um nome válido.");
-            } else if (containsSpecialCharacters(nome)) {
-                JOptionPane.showMessageDialog(null, "O nome não pode conter caracteres especiais. Por favor, digite um nome válido.");
-            }
-        } while (nome.isEmpty() || containsSpecialCharacters(nome));
-        return nome;
-    }
-
-    private static String getValidTelefone(String telefone) {
-        do {
-            telefone = JOptionPane.showInputDialog("Digite o telefone do Contato: ");
-            if (telefone == null) {
-                return null;
-            }
-            if (telefone.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "O telefone não pode ser vazio. Por favor, digite um telefone válido.");
-            } else if (!containsOnlyNumbers(telefone)) {
-                JOptionPane.showMessageDialog(null, "O telefone deve conter apenas números. Por favor, digite um telefone válido.");
-            }
-        } while (telefone.isEmpty() || !containsOnlyNumbers(telefone));
-        return telefone;
-    }
-
-    private static boolean containsOnlyNumbers(String text) {
-        return text.matches("[0-9]+");
-        // o zé vi que essse !telefone.matches("\\d+")); significa que estamos procurando um ou mais dígitos
-        // vi isso no chatGPT não tenho vergonha não minto tbm sou filho de deus KKKKKKK
-    }
-
-    private static boolean containsSpecialCharacters(String text) {
-        Pattern specialChars = Pattern.compile("[^a-zA-Z0-9]");
-        return specialChars.matcher(text).find();
-    }
 }
